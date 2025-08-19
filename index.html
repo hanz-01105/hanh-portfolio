@@ -1,149 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Hanh Le. All rights reserved.</p>
-            <p>"Turning data into decisions, insights into impact"</p>
-            <p style="color: #0969da; margin-top: 16px;">Built with passion for analytics</p>
-        </div>
-    </footer>
-
-    <script>
-        // Typewriter effect
-        function typeWriter(text, element, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        }
-
-        // Initialize effects
-        document.addEventListener('DOMContentLoaded', function() {
-            const typeElement = document.getElementById('typewriter');
-            const texts = [
-                'AI Researcher @ Algoverse | Financial Analyst @ Congero',
-                'Junior @ UMass Boston | Business Analytics',
-                'Tech Production Intern @ Kigumi Group',
-                'Data-Driven Decision Maker'
-            ];
-            let textIndex = 0;
-            
-            function cycleText() {
-                typeWriter(texts[textIndex], typeElement, 100);
-                textIndex = (textIndex + 1) % texts.length;
-            }
-            
-            cycleText();
-            setInterval(cycleText, 4000);
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // My article form handling
-        document.getElementById('myArticleForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const title = document.getElementById('myArticleTitle').value;
-            const source = document.getElementById('myArticleSource').value;
-            const url = document.getElementById('myArticleUrl').value;
-            const summary = document.getElementById('myArticleSummary').value;
-            const analysis = document.getElementById('myPersonalAnalysis').value;
-            
-            // Create new article element
-            const articleElement = document.createElement('div');
-            articleElement.className = 'article-item';
-            articleElement.innerHTML = `
-                <h3>${title}</h3>
-                <div class="article-meta">Published: ${new Date().toLocaleDateString()} | Author: Hanh Le</div>
-                <span class="article-source">${source}</span>
-                ${url ? `<p><a href="${url}" target="_blank" style="color: #58a6ff;">Read Original Article</a></p>` : ''}
-                <p><strong>Market Signal:</strong> ${summary}</p>
-                <p><strong>My Analysis:</strong> ${analysis}</p>
-            `;
-            
-            // Add to my articles list
-            document.getElementById('myArticlesList').insertBefore(articleElement, document.getElementById('myArticlesList').firstChild);
-            
-            // Reset form
-            this.reset();
-            
-            alert('Insight published successfully!');
-        });
-
-        // Community contribution form handling
-        document.getElementById('contributionForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const title = document.getElementById('contribTitle').value;
-            const source = document.getElementById('contribSource').value;
-            const url = document.getElementById('contribUrl').value;
-            const summary = document.getElementById('contribSummary').value;
-            const question = document.getElementById('contribQuestion').value;
-            
-            // Create new contribution element
-            const contributionElement = document.createElement('div');
-            contributionElement.className = 'article-item';
-            contributionElement.innerHTML = `
-                <h3>Community Contribution: ${title}</h3>
-                <div class="article-meta">Submitted: ${new Date().toLocaleDateString()} | Contributor: Anonymous</div>
-                <span class="article-source">${source}</span>
-                <p><a href="${url}" target="_blank" style="color: #58a6ff;">Read Original Article</a></p>
-                <p><strong>Article Summary:</strong> ${summary}</p>
-                ${question ? `<p><strong>Question:</strong> ${question}</p>` : ''}
-                <p><strong>My Analysis:</strong> <em style="color: #58a6ff;">Analysis pending - I'll review this article and provide my insights soon!</em></p>
-            `;
-            
-            // Add to contributions list
-            document.getElementById('contributionsList').insertBefore(contributionElement, document.getElementById('contributionsList').firstChild);
-            
-            // Reset form
-            this.reset();
-            
-            alert('Article submitted for analysis! I will review and provide insights soon.');
-        });
-
-        // Add scroll-triggered animations
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const scrollTop = window.pageYOffset;
-
-            sections.forEach(section => {
-                const offset = section.offsetTop - 300;
-                if (scrollTop >= offset) {
-                    section.style.opacity = '1';
-                    section.style.transform = 'translateY(0)';
-                }
-            });
-        });
-
-        // Initialize sections with animation states
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0.3';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'all 0.6s ease';
-        });
-
-        // Make the first section visible immediately
-        document.querySelector('#home').style.opacity = '1';
-        document.querySelector('#home').style.transform = 'translateY(0)';
-    </script>
-</body>
-</html><meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hanh Le - Data & Business Analytics Professional</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -673,38 +531,6 @@
             padding: 48px 0;
             border-top: 1px solid #30363d;
             font-family: 'Times New Roman', Times, serif;
-        }px;
-        }
-
-        .resume-content ul {
-            color: #656d76;
-            font-size: 16px;
-        }
-
-        .resume-download {
-            display: inline-block;
-            background: #0969da;
-            color: white;
-            padding: 16px 32px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 16px;
-            margin: 16px;
-            transition: all 0.2s;
-            font-weight: 500;
-        }
-
-        .resume-download:hover {
-            background: #0550ae;
-        }
-
-        /* Footer */
-        footer {
-            background: #24292f;
-            color: #f0f6fc;
-            text-align: center;
-            padding: 48px 0;
-            border-top: 1px solid #d0d7de;
         }
 
         /* Animations */
@@ -791,7 +617,7 @@
                 </div>
                 
                 <div class="social-links">
-                    <a href="mailto:katele2277@gmail.com">
+                    <a href="#" onclick="showEmail(); return false;">
                         <i class="fas fa-envelope"></i> Email
                     </a>
                     <a href="https://linkedin.com/in/hanhle01" target="_blank">
@@ -879,7 +705,7 @@
                         <p>Comprehensive analysis of Medicare data to identify healthcare trends and cost optimization opportunities. Advanced data analysis + healthcare domain expertise.</p>
                         <p><strong>Stack:</strong> Python | Pandas | SQL | Data Visualization</p>
                         <div class="project-links">
-                            <a href="https://github.com/hanh-analytics/Medicare-Inpatient-Hospital" target="_blank">View Code</a>
+                            <a href="https://github.com/hanz-01105/Medicare-Inpatient-Hospital" target="_blank">View Code</a>
                         </div>
                     </div>
                     
@@ -888,16 +714,16 @@
                         <p>Machine learning models for financial market analysis and stock price direction prediction. Open source collaboration welcome!</p>
                         <p><strong>Stack:</strong> Python | ML | Financial APIs | TensorFlow</p>
                         <div class="project-links">
-                            <a href="https://github.com/hanh-analytics/Stock-Price-Direction" target="_blank">View Code</a>
+                            <a href="https://github.com/hanz-01105/Stock-Price-Direction" target="_blank">View Code</a>
                         </div>
                     </div>
                     
                     <div class="project-card">
-                        <h3>$ ./algoverse_ai_research.py</h3>
-                        <p>Engineering CNNs at Algoverse. 90% diagnostic accuracy | 35% error reduction | 40% faster pipelines. Cutting-edge research in computer vision and deep learning.</p>
-                        <p><strong>Stack:</strong> TensorFlow | Python | Computer Vision | Deep Learning</p>
+                        <h3>$ ./bank_loan_analysis.py</h3>
+                        <p>Comprehensive bank loan default prediction using machine learning. Risk assessment models with feature engineering and ensemble methods for financial decision-making.</p>
+                        <p><strong>Stack:</strong> Python | Scikit-learn | Pandas | Data Visualization | Risk Modeling</p>
                         <div class="project-links">
-                            <a href="#" onclick="alert('Research in progress - Contact for details!')">Learn More</a>
+                            <a href="https://github.com/hanz-01105/Bank-loan-analysis" target="_blank">View Code</a>
                         </div>
                     </div>
                 </div>
@@ -914,19 +740,51 @@
                         <h3>My Insights</h3>
                         <div class="articles-list" id="myArticlesList">
                             <div class="article-item">
-                                <h3>Fed's Rate Strategy: A Data-Driven Analysis</h3>
-                                <div class="article-meta">Published: 2025-01-15 | Author: Hanh Le</div>
-                                <span class="article-source">Wall Street Journal Analysis</span>
-                                <p><strong>Market Signal:</strong> Federal Reserve signals potential rate cuts responding to cooling inflation metrics...</p>
-                                <p><strong>My Analysis:</strong> Historical data patterns suggest this inflection point typically precedes 6-month equity rallies averaging 12%. Sector rotation models indicate growth stock outperformance, particularly in tech/biotech where DCF sensitivity to rate changes creates amplified responses. Key watch: 10Y-2Y yield curve normalization timeline...</p>
+                                <h3>NVIDIA's China Strategy: Geopolitical Risk vs Market Opportunity</h3>
+                                <div class="article-meta">Published: August 17, 2025 | Author: Hanh Le</div>
+                                <a href="https://www.wsj.com/tech/nvidia-wins-ok-to-resume-sales-of-ai-chip-to-china-after-ceo-meets-trump-68f55d71?mod=series_uschina" target="_blank" class="article-source">Wall Street Journal Analysis</a>
+                                <p><strong>Market Signal:</strong> NVIDIA receives Trump administration approval to resume H20 AI chip sales to China after CEO meets with President...</p>
+                                <p><strong>My Analysis:</strong> This is strategically questionable. H20 chips are performance-limited versions designed for export compliance, yet China has developed domestic alternatives through Huawei. The geopolitical risk-reward calculation appears unfavorable - NVIDIA must compete against state-backed Chinese AI makers while navigating regulatory uncertainty. Previous analysis showed $2.5B in blocked shipments and $8B projected losses. Market dominance in China is diminishing as local competitors gain ground. Better focus on diversified geographic revenue streams in neutral markets like Singapore.</p>
                             </div>
 
                             <div class="article-item">
-                                <h3>Crypto Market Correlation Breakdown</h3>
-                                <div class="article-meta">Published: 2025-01-12 | Author: Hanh Le</div>
-                                <span class="article-source">Bloomberg Terminal Data</span>
-                                <p><strong>Market Signal:</strong> Bitcoin-S&P500 correlation hits 18-month low at 0.23...</p>
-                                <p><strong>My Analysis:</strong> Decoupling indicates institutional crypto adoption reaching maturity phase. Python correlation analysis shows BTC moving toward safe-haven characteristics during equity volatility spikes. Portfolio implications: 5-7% crypto allocation now provides genuine diversification benefits vs. previous 85%+ correlation periods...</p>
+                                <h3>Retail Tariff Impact: Swedish Brand Exits US Market</h3>
+                                <div class="article-meta">Published: August 15, 2025 | Author: Hanh Le</div>
+                                <a href="https://www.wsj.com/business/retail/polarn-o-pyret-swedish-clothing-us-tariffs-55e7a2cd?mod=business_feat2_retail_pos5" target="_blank" class="article-source">Wall Street Journal Analysis</a>
+                                <p><strong>Market Signal:</strong> Polarn O. Pyret (Swedish children's outerwear) exits US market by year-end due to tariff costs adding hundreds of thousands in inventory expenses...</p>
+                                <p><strong>My Analysis:</strong> This exemplifies tariff elasticity destroying market viability for mid-tier international brands. Currency depreciation + tariff duties create compound cost pressure that pricing power cannot absorb. Retail sector analysis shows similar patterns across European apparel imports. Investment thesis: Short international retail ETFs with heavy US exposure, long domestic manufacturing plays. The broader trend suggests continued market share consolidation favoring domestic producers and large-scale importers with tariff absorption capacity.</p>
+                            </div>
+
+                            <div class="article-item">
+                                <h3>Big Tech Cash Flow Paradox: AI Infrastructure vs Liquidity</h3>
+                                <div class="article-meta">Published: August 8, 2025 | Author: Hanh Le</div>
+                                <a href="https://www.wsj.com/economy/the-ai-booms-hidden-risk-to-the-economy-731b00d6?mod=economy_trendingnow_article_pos4" target="_blank" class="article-source">Wall Street Journal Analysis</a>
+                                <p><strong>Market Signal:</strong> Microsoft, Meta report 73% net income growth but 30% free cash flow decline due to massive AI infrastructure capex...</p>
+                                <p><strong>My Analysis:</strong> This represents a fundamental business model transformation from asset-light to asset-heavy operations. The cash flow divergence signals potential liquidity risks reminiscent of dot-com era overcapitalization. While these companies drive >50% of recent GDP growth, the revenue timeline from AI investments remains speculative. Historical analysis suggests infrastructure-heavy tech spending cycles require 3-5 years for ROI realization. Risk assessment: Monitor debt-to-cash ratios and infrastructure utilization rates. The macroeconomic implication supports higher interest rates to manage this capital intensity.</p>
+                            </div>
+
+                            <div class="article-item">
+                                <h3>Meta vs Apple: The Next Computing Platform War</h3>
+                                <div class="article-meta">Published: August 6, 2025 | Author: Hanh Le</div>
+                                <a href="https://www.wsj.com/tech/ai/mark-zuckerberg-just-declared-war-on-the-iphone-30163885?mod=business_trendingnow_article_pos2" target="_blank" class="article-source">Wall Street Journal Analysis</a>
+                                <p><strong>Market Signal:</strong> Zuckerberg positions AI-infused smart glasses as iPhone replacement, betting on "personal superintelligence" over smartphone dominance...</p>
+                                <p><strong>My Analysis:</strong> Meta faces significant platform displacement challenges. Apple controls the ecosystem, distribution, and user trust - advantages that create switching cost moats. For Meta to succeed, AI glasses need 10x compelling use cases over smartphones. Historical precedent shows platform wars favor incumbents with ecosystem lock-in (see: Windows vs competitors). Investment angle: Meta's AR/VR pivot is high-risk, high-reward. Apple's defensive position more stable but limits upside. Watch for "killer app" development and enterprise adoption rates as leading indicators of market traction.</p>
+                            </div>
+
+                            <div class="article-item">
+                                <h3>JPMorgan-Apple Credit Card Deal: Strategic Banking Realignment</h3>
+                                <div class="article-meta">Published: August 1, 2025 | Author: Hanh Le</div>
+                                <a href="https://www.wsj.com/finance/banking/jpmorgan-chase-nears-a-deal-to-take-over-apples-credit-card-program-0bbcdda8?mod=finance_lead_pos1" target="_blank" class="article-source">Wall Street Journal Analysis</a>
+                                <p><strong>Market Signal:</strong> JPMorgan Chase negotiating to take over Apple Card program from Goldman Sachs, potentially the largest consumer credit partnership deal...</p>
+                                <p><strong>My Analysis:</strong> This represents optimal capital allocation across all three parties. Goldman exits consumer credit losses to focus on institutional banking (higher ROE). JPMorgan leverages existing consumer infrastructure to capture Apple's premium customer base. Apple gains operational reliability from the market leader in consumer credit. Strategic implications: Validates that investment banks should stick to core competencies rather than chase consumer trends. JPMorgan's scale advantages in risk management and operational efficiency justify taking this business at appropriate pricing. Expect deeper Apple-JPM financial integration.</p>
+                            </div>
+
+                            <div class="article-item">
+                                <h3>McKinsey Leadership Reform: Corporate Governance Evolution</h3>
+                                <div class="article-meta">Published: July 25, 2025 | Author: Hanh Le</div>
+                                <a href="https://www.wsj.com/business/mckinsey-seeks-to-avoid-new-succession-dramas-with-changes-to-its-elections-9db992c1" target="_blank" class="article-source">Wall Street Journal Analysis</a>
+                                <p><strong>Market Signal:</strong> McKinsey changes from 3-year terms with re-election to single 6-year terms, reduces board from 30 to 12 partners...</p>
+                                <p><strong>My Analysis:</strong> This governance restructuring addresses the instability that damaged McKinsey during the opioid crisis and succession battles. The reform reduces internal politicking and extends strategic planning horizons. Historical context: Sneader's ouster after implementing client selection reforms shows how partnership dynamics can conflict with risk management. The new structure provides leadership insulation from short-term partner pressures while maintaining accountability through mid-term confirmation votes. Broader consulting industry implications: Expect similar governance modernization at other partnership-based firms facing reputational risks.</p>
                             </div>
                         </div>
 
@@ -969,7 +827,7 @@
                     <!-- Community Contributions Section -->
                     <div class="contributions-section">
                         <h3>Community Contributions</h3>
-                        <p style="text-align: center; color: #656d76; margin-bottom: 32px;">Share interesting articles and get my analytical perspective</p>
+                        <p style="text-align: center; color: #8b949e; margin-bottom: 32px;">Share interesting articles and get my analytical perspective</p>
                         
                         <div class="article-form">
                             <h3>Submit Article for Analysis</h3>
@@ -1026,11 +884,11 @@
                     <p>Download my complete resume to explore my experience, education, and achievements in data analytics and business intelligence.</p>
                     
                     <div style="margin: 48px 0;">
-                        <h3 style="color: #24292f; font-size: 24px; margin-bottom: 24px;">Current Experience Stack:</h3>
-                        <ul style="text-align: left; max-width: 600px; margin: 16px auto; color: #656d76; font-size: 16px; line-height: 1.8;">
-                            <li><strong style="color: #0969da;">AI Researcher</strong> - Algoverse</li>
-                            <li><strong style="color: #0969da;">Financial Analyst Intern</strong> - Congero Technology Group</li>
-                            <li><strong style="color: #0969da;">Tech Production Intern</strong> - Kigumi Group</li>
+                        <h3 style="color: #8b949e; font-size: 24px; margin-bottom: 24px;">Current Experience Stack:</h3>
+                        <ul style="text-align: left; max-width: 600px; margin: 16px auto; color: #8b949e; font-size: 16px; line-height: 1.8;">
+                            <li><strong style="color: #238636;">AI Researcher</strong> - Algoverse</li>
+                            <li><strong style="color: #238636;">Financial Analyst Intern</strong> - Congero Technology Group</li>
+                            <li><strong style="color: #238636;">Tech Production Intern</strong> - Kigumi Group</li>
                         </ul>
                     </div>
                     
@@ -1045,3 +903,160 @@
             </div>
         </section>
     </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Hanh Le. All rights reserved.</p>
+            <p>"Turning data into decisions, insights into impact"</p>
+            <p style="color: #238636; margin-top: 16px;">Built with passion for analytics</p>
+        </div>
+    </footer>
+
+    <script>
+        // Email popup function
+        function showEmail() {
+            alert('📧 Email: katele2277@gmail.com\n\nClick OK to copy to clipboard!');
+            
+            // Try to copy to clipboard
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText('katele2277@gmail.com').then(function() {
+                    // Success - email copied
+                }, function() {
+                    // Fallback if clipboard API fails
+                    console.log('Clipboard API failed');
+                });
+            }
+        }
+
+        // Typewriter effect
+        function typeWriter(text, element, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const typeElement = document.getElementById('typewriter');
+            const texts = [
+                'AI Researcher at Algoverse - Financial Analyst at Congero',
+                'Junior at UMass Boston - Business Analytics', 
+                'Tech Production Intern at Kigumi Group',
+                'Data-Driven Decision Maker'
+            ];
+            let textIndex = 0;
+            
+            function cycleText() {
+                typeWriter(texts[textIndex], typeElement, 80);
+                textIndex = (textIndex + 1) % texts.length;
+            }
+            
+            cycleText();
+            setInterval(cycleText, 5000);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // My article form handling
+        document.getElementById('myArticleForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('myArticleTitle').value;
+            const source = document.getElementById('myArticleSource').value;
+            const url = document.getElementById('myArticleUrl').value;
+            const summary = document.getElementById('myArticleSummary').value;
+            const analysis = document.getElementById('myPersonalAnalysis').value;
+            
+            // Create new article element
+            const articleElement = document.createElement('div');
+            articleElement.className = 'article-item';
+            articleElement.innerHTML = `
+                <h3>${title}</h3>
+                <div class="article-meta">Published: ${new Date().toLocaleDateString()} | Author: Hanh Le</div>
+                <a href="${url}" target="_blank" class="article-source">${source}</a>
+                <p><strong>Market Signal:</strong> ${summary}</p>
+                <p><strong>My Analysis:</strong> ${analysis}</p>
+            `;
+            
+            // Add to my articles list
+            document.getElementById('myArticlesList').insertBefore(articleElement, document.getElementById('myArticlesList').firstChild);
+            
+            // Reset form
+            this.reset();
+            
+            alert('Insight published successfully!');
+        });
+
+        // Community contribution form handling
+        document.getElementById('contributionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('contribTitle').value;
+            const source = document.getElementById('contribSource').value;
+            const url = document.getElementById('contribUrl').value;
+            const summary = document.getElementById('contribSummary').value;
+            const question = document.getElementById('contribQuestion').value;
+            
+            // Create new contribution element
+            const contributionElement = document.createElement('div');
+            contributionElement.className = 'article-item';
+            contributionElement.innerHTML = `
+                <h3>Community Contribution: ${title}</h3>
+                <div class="article-meta">Submitted: ${new Date().toLocaleDateString()} | Contributor: Anonymous</div>
+                <a href="${url}" target="_blank" class="article-source">${source}</a>
+                <p><strong>Article Summary:</strong> ${summary}</p>
+                ${question ? `<p><strong>Question:</strong> ${question}</p>` : ''}
+                <p><strong>My Analysis:</strong> <em style="color: #58a6ff;">Analysis pending - I'll review this article and provide my insights soon!</em></p>
+            `;
+            
+            // Add to contributions list
+            document.getElementById('contributionsList').insertBefore(contributionElement, document.getElementById('contributionsList').firstChild);
+            
+            // Reset form
+            this.reset();
+            
+            alert('Article submitted for analysis! I will review and provide insights soon.');
+        });
+
+        // Add scroll-triggered animations
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const scrollTop = window.pageYOffset;
+
+            sections.forEach(section => {
+                const offset = section.offsetTop - 300;
+                if (scrollTop >= offset) {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Initialize sections with animation states
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0.3';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.6s ease';
+        });
+
+        // Make the first section visible immediately
+        document.querySelector('#home').style.opacity = '1';
+        document.querySelector('#home').style.transform = 'translateY(0)';
+    </script>
+</body>
+</html>
