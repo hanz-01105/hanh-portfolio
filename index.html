@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Hanh Le. All rights reserved.</p>
+            <p>"Turning data into decisions, insights into impact"</p>
+            <p style="color: #0969da; margin-top: 16px;">Built with passion for analytics</p>
+        </div>
+    </footer>
+
+    <script>
+        // Typewriter effect
+        function typeWriter(text, element, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const typeElement = document.getElementById('typewriter');
+            const texts = [
+                'AI Researcher @ Algoverse | Financial Analyst @ Congero',
+                'Junior @ UMass Boston | Business Analytics',
+                'Tech Production Intern @ Kigumi Group',
+                'Data-Driven Decision Maker'
+            ];
+            let textIndex = 0;
+            
+            function cycleText() {
+                typeWriter(texts[textIndex], typeElement, 100);
+                textIndex = (textIndex + 1) % texts.length;
+            }
+            
+            cycleText();
+            setInterval(cycleText, 4000);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // My article form handling
+        document.getElementById('myArticleForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('myArticleTitle').value;
+            const source = document.getElementById('myArticleSource').value;
+            const url = document.getElementById('myArticleUrl').value;
+            const summary = document.getElementById('myArticleSummary').value;
+            const analysis = document.getElementById('myPersonalAnalysis').value;
+            
+            // Create new article element
+            const articleElement = document.createElement('div');
+            articleElement.className = 'article-item';
+            articleElement.innerHTML = `
+                <h3>${title}</h3>
+                <div class="article-meta">Published: ${new Date().toLocaleDateString()} | Author: Hanh Le</div>
+                <span class="article-source">${source}</span>
+                ${url ? `<p><a href="${url}" target="_blank" style="color: #58a6ff;">Read Original Article</a></p>` : ''}
+                <p><strong>Market Signal:</strong> ${summary}</p>
+                <p><strong>My Analysis:</strong> ${analysis}</p>
+            `;
+            
+            // Add to my articles list
+            document.getElementById('myArticlesList').insertBefore(articleElement, document.getElementById('myArticlesList').firstChild);
+            
+            // Reset form
+            this.reset();
+            
+            alert('Insight published successfully!');
+        });
+
+        // Community contribution form handling
+        document.getElementById('contributionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('contribTitle').value;
+            const source = document.getElementById('contribSource').value;
+            const url = document.getElementById('contribUrl').value;
+            const summary = document.getElementById('contribSummary').value;
+            const question = document.getElementById('contribQuestion').value;
+            
+            // Create new contribution element
+            const contributionElement = document.createElement('div');
+            contributionElement.className = 'article-item';
+            contributionElement.innerHTML = `
+                <h3>Community Contribution: ${title}</h3>
+                <div class="article-meta">Submitted: ${new Date().toLocaleDateString()} | Contributor: Anonymous</div>
+                <span class="article-source">${source}</span>
+                <p><a href="${url}" target="_blank" style="color: #58a6ff;">Read Original Article</a></p>
+                <p><strong>Article Summary:</strong> ${summary}</p>
+                ${question ? `<p><strong>Question:</strong> ${question}</p>` : ''}
+                <p><strong>My Analysis:</strong> <em style="color: #58a6ff;">Analysis pending - I'll review this article and provide my insights soon!</em></p>
+            `;
+            
+            // Add to contributions list
+            document.getElementById('contributionsList').insertBefore(contributionElement, document.getElementById('contributionsList').firstChild);
+            
+            // Reset form
+            this.reset();
+            
+            alert('Article submitted for analysis! I will review and provide insights soon.');
+        });
+
+        // Add scroll-triggered animations
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const scrollTop = window.pageYOffset;
+
+            sections.forEach(section => {
+                const offset = section.offsetTop - 300;
+                if (scrollTop >= offset) {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Initialize sections with animation states
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0.3';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.6s ease';
+        });
+
+        // Make the first section visible immediately
+        document.querySelector('#home').style.opacity = '1';
+        document.querySelector('#home').style.transform = 'translateY(0)';
+    </script>
+</body>
+</html><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanh Le - Data & Business Analytics Professional</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #ffffff;
+            background: #0d1117;
+            min-height: 100vh;
+        }
+
+        /* GitHub dark theme animated background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%);
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="%2330363d" opacity="0.3"/><circle cx="80" cy="40" r="1.5" fill="%23484f58" opacity="0.2"/><circle cx="50" cy="70" r="1" fill="%23238636" opacity="0.1"/></svg>') repeat;
+            animation: float 30s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-50px); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header - GitHub dark style */
+        header {
+            background: #21262d;
+            backdrop-filter: blur(15px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #30363d;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+        }
+
+        .logo {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.2s;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .nav-links a:hover {
+            color: #58a6ff;
+            background: rgba(88, 166, 255, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            background: #0d1117;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+            color: #ffffff;
+            font-weight: 600;
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: 2px;
+        }
+
+        .hero-content h2 {
+            font-size: 24px;
+            margin-bottom: 24px;
+            color: #8b949e;
+            font-weight: 400;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .typing-text {
+            font-size: 16px;
+            color: #8b949e;
+            margin-bottom: 32px;
+            min-height: 24px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .motto {
+            font-size: 20px;
+            font-style: italic;
+            margin: 32px 0;
+            padding: 24px 32px;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            display: inline-block;
+            color: #ffffff;
+            font-weight: 500;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            background: #21262d;
+            color: #ffffff;
+            text-decoration: none;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            transition: all 0.2s;
+            font-weight: 500;
+            font-size: 14px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .social-links a:hover {
+            background: #238636;
+            color: #ffffff;
+            border-color: #238636;
+        }
+
+        .social-links i {
+            margin-right: 8px;
+        }
+
+        /* Main Content */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 48px;
+            color: #ffffff;
+            font-weight: 600;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /* About Section */
+        .about {
+            background: #161b22;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 16px;
+            line-height: 1.6;
+            background: #21262d;
+            padding: 32px;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+            color: #ffffff;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .about-text p {
+            margin-bottom: 16px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .skill-category {
+            background: #21262d;
+            padding: 24px;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+            transition: all 0.2s;
+        }
+
+        .skill-category:hover {
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+            border-color: #238636;
+        }
+
+        .skill-category h4 {
+            color: #58a6ff;
+            margin-bottom: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: #238636;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.2s;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .skill-tag:hover {
+            background: #2ea043;
+            transform: translateY(-1px);
+        }
+
+        /* Projects Section */
+        .projects {
+            background: #0d1117;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+
+        .project-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 32px;
+            transition: all 0.2s;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+            border-color: #238636;
+        }
+
+        .project-card h3 {
+            color: #58a6ff;
+            margin-bottom: 16px;
+            font-size: 20px;
+            font-weight: 600;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .project-card p {
+            color: #8b949e;
+            margin-bottom: 16px;
+            line-height: 1.5;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .project-links {
+            margin-top: 24px;
+        }
+
+        .project-links a {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #238636;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-right: 8px;
+            transition: all 0.2s;
+            font-weight: 500;
+            font-size: 14px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .project-links a:hover {
+            background: #2ea043;
+        }
+
+        /* Articles Section */
+        .articles {
+            background: #161b22;
+        }
+
+        .articles-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .my-articles {
+            margin-bottom: 64px;
+        }
+
+        .my-articles h3 {
+            color: #ffffff;
+            font-size: 24px;
+            margin-bottom: 32px;
+            text-align: center;
+            font-weight: 600;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .article-form {
+            background: #21262d;
+            padding: 32px;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+            margin-bottom: 48px;
+        }
+
+        .contributions-section h3 {
+            color: #ffffff;
+            font-size: 20px;
+            margin-bottom: 32px;
+            text-align: center;
+            font-weight: 600;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 14px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: all 0.2s;
+            background: #0d1117;
+            color: #ffffff;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #238636;
+            box-shadow: 0 0 0 3px rgba(35, 134, 54, 0.3);
+            background: #161b22;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn {
+            background: #238636;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+            font-weight: 500;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .btn:hover {
+            background: #2ea043;
+        }
+
+        .articles-list {
+            display: grid;
+            gap: 24px;
+        }
+
+        .article-item {
+            background: #21262d;
+            padding: 32px;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+            transition: all 0.2s;
+        }
+
+        .article-item:hover {
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+            border-color: #238636;
+        }
+
+        .article-item h3 {
+            color: #ffffff;
+            margin-bottom: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .article-meta {
+            color: #8b949e;
+            font-size: 14px;
+            margin-bottom: 16px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .article-source {
+            display: inline-block;
+            background: #161b22;
+            color: #58a6ff;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-bottom: 16px;
+            font-weight: 500;
+            border: 1px solid #30363d;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .article-item p {
+            color: #8b949e;
+            line-height: 1.5;
+            margin-bottom: 12px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /* Resume Section */
+        .resume-section {
+            background: #0d1117;
+        }
+
+        .resume-content {
+            text-align: center;
+        }
+
+        .resume-content p {
+            color: #8b949e;
+            font-size: 16px;
+            margin-bottom: 24px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .resume-content ul {
+            color: #8b949e;
+            font-size: 16px;
+        }
+
+        .resume-download {
+            display: inline-block;
+            background: #238636;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            margin: 16px;
+            transition: all 0.2s;
+            font-weight: 500;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .resume-download:hover {
+            background: #2ea043;
+        }
+
+        /* Footer */
+        footer {
+            background: #21262d;
+            color: #ffffff;
+            text-align: center;
+            padding: 48px 0;
+            border-top: 1px solid #30363d;
+            font-family: 'Times New Roman', Times, serif;
+        }px;
+        }
+
+        .resume-content ul {
+            color: #656d76;
+            font-size: 16px;
+        }
+
+        .resume-download {
+            display: inline-block;
+            background: #0969da;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            margin: 16px;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+
+        .resume-download:hover {
+            background: #0550ae;
+        }
+
+        /* Footer */
+        footer {
+            background: #24292f;
+            color: #f0f6fc;
+            text-align: center;
+            padding: 48px 0;
+            border-top: 1px solid #d0d7de;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* GitHub-style scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f6f8fa;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #d0d7de;
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0969da;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <header>
+        <nav class="container">
+            <div class="logo">Hi World, let's get to know each other!</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#articles">Insights</a></li>
+                <li><a href="#resume">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>HANH LE</h1>
+                <h2>Data & Business Analytics Professional</h2>
+                <div class="typing-text">
+                    <span id="typewriter">AI Researcher @ Algoverse | Financial Analyst @ Congero</span>
+                </div>
+                <div class="motto">
+                    "To every problem, there is always a solution"
+                </div>
+                
+                <div class="social-links">
+                    <a href="mailto:katele2277@gmail.com">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="https://linkedin.com/in/hanhle01" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/hanz-01105" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p><strong>Data-driven Business Analytics student</strong></p>
+                        <p><strong>Experience:</strong> AI research, financial modeling, tech consulting</p>
+                        
+                        <p><strong>Current Projects:</strong> Algoverse (AI Research) + Congero Technology Group (Financial Analyst)</p>
+                        
+                        <p><strong>Achievements:</strong><br>
+                        • 90% CNN diagnostic accuracy<br>
+                        • 25% process optimization<br>
+                        • 30% KPI visibility improvements</p>
+                        
+                        <p><strong>Mission:</strong> Leveraging analytics to solve complex business problems and drive strategic decision-making.</p>
+                        
+                        <p><strong>Current Goal:</strong> Securing Data/Financial Analytics internships while pursuing CFA Level 1 certification.</p>
+                    </div>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>def programming():</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">Java</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">C++</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>class Visualization:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Power BI</span>
+                                <span class="skill-tag">Tableau</span>
+                                <span class="skill-tag">Excel</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>import machine_learning:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Pandas</span>
+                                <span class="skill-tag">Scikit-learn</span>
+                                <span class="skill-tag">TensorFlow</span>
+                                <span class="skill-tag">Jupyter</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>sudo cloud_tools:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">AWS</span>
+                                <span class="skill-tag">GCP</span>
+                                <span class="skill-tag">Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>$ ./medicare_analysis.py</h3>
+                        <p>Comprehensive analysis of Medicare data to identify healthcare trends and cost optimization opportunities. Advanced data analysis + healthcare domain expertise.</p>
+                        <p><strong>Stack:</strong> Python | Pandas | SQL | Data Visualization</p>
+                        <div class="project-links">
+                            <a href="https://github.com/hanh-analytics/Medicare-Inpatient-Hospital" target="_blank">View Code</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h3>$ ./stock_prediction.py</h3>
+                        <p>Machine learning models for financial market analysis and stock price direction prediction. Open source collaboration welcome!</p>
+                        <p><strong>Stack:</strong> Python | ML | Financial APIs | TensorFlow</p>
+                        <div class="project-links">
+                            <a href="https://github.com/hanh-analytics/Stock-Price-Direction" target="_blank">View Code</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h3>$ ./algoverse_ai_research.py</h3>
+                        <p>Engineering CNNs at Algoverse. 90% diagnostic accuracy | 35% error reduction | 40% faster pipelines. Cutting-edge research in computer vision and deep learning.</p>
+                        <p><strong>Stack:</strong> TensorFlow | Python | Computer Vision | Deep Learning</p>
+                        <div class="project-links">
+                            <a href="#" onclick="alert('Research in progress - Contact for details!')">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="articles" class="articles">
+            <div class="container">
+                <h2 class="section-title">Market Insights</h2>
+                <div class="articles-container">
+                    
+                    <!-- My Articles Section -->
+                    <div class="my-articles">
+                        <h3>My Insights</h3>
+                        <div class="articles-list" id="myArticlesList">
+                            <div class="article-item">
+                                <h3>Fed's Rate Strategy: A Data-Driven Analysis</h3>
+                                <div class="article-meta">Published: 2025-01-15 | Author: Hanh Le</div>
+                                <span class="article-source">Wall Street Journal Analysis</span>
+                                <p><strong>Market Signal:</strong> Federal Reserve signals potential rate cuts responding to cooling inflation metrics...</p>
+                                <p><strong>My Analysis:</strong> Historical data patterns suggest this inflection point typically precedes 6-month equity rallies averaging 12%. Sector rotation models indicate growth stock outperformance, particularly in tech/biotech where DCF sensitivity to rate changes creates amplified responses. Key watch: 10Y-2Y yield curve normalization timeline...</p>
+                            </div>
+
+                            <div class="article-item">
+                                <h3>Crypto Market Correlation Breakdown</h3>
+                                <div class="article-meta">Published: 2025-01-12 | Author: Hanh Le</div>
+                                <span class="article-source">Bloomberg Terminal Data</span>
+                                <p><strong>Market Signal:</strong> Bitcoin-S&P500 correlation hits 18-month low at 0.23...</p>
+                                <p><strong>My Analysis:</strong> Decoupling indicates institutional crypto adoption reaching maturity phase. Python correlation analysis shows BTC moving toward safe-haven characteristics during equity volatility spikes. Portfolio implications: 5-7% crypto allocation now provides genuine diversification benefits vs. previous 85%+ correlation periods...</p>
+                            </div>
+                        </div>
+
+                        <!-- Form for me to add articles -->
+                        <div class="article-form">
+                            <h3>Publish New Insight</h3>
+                            <p>Share your latest market analysis and insights</p>
+                            
+                            <form id="myArticleForm">
+                                <div class="form-group">
+                                    <label for="myArticleTitle">Analysis Title</label>
+                                    <input type="text" id="myArticleTitle" placeholder="Fed Policy Impact on Tech Valuations" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="myArticleSource">Data Source</label>
+                                    <input type="text" id="myArticleSource" placeholder="Wall Street Journal, Bloomberg, Reuters..." required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="myArticleUrl">Source URL (optional)</label>
+                                    <input type="url" id="myArticleUrl" placeholder="https://...">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="myArticleSummary">Market Signal/Summary</label>
+                                    <textarea id="myArticleSummary" placeholder="Key market development or data point..." required></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="myPersonalAnalysis">Your Analysis & Insights</label>
+                                    <textarea id="myPersonalAnalysis" placeholder="Your data-driven analysis, models, predictions..." required></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn">Publish Insight</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Community Contributions Section -->
+                    <div class="contributions-section">
+                        <h3>Community Contributions</h3>
+                        <p style="text-align: center; color: #656d76; margin-bottom: 32px;">Share interesting articles and get my analytical perspective</p>
+                        
+                        <div class="article-form">
+                            <h3>Submit Article for Analysis</h3>
+                            <p>Share articles from WSJ, Bloomberg, or other financial sources for analysis</p>
+                            
+                            <form id="contributionForm">
+                                <div class="form-group">
+                                    <label for="contribTitle">Article Title</label>
+                                    <input type="text" id="contribTitle" placeholder="Title of the article you want analyzed" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contribSource">Source Publication</label>
+                                    <input type="text" id="contribSource" placeholder="Wall Street Journal, Bloomberg, Reuters..." required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contribUrl">Article URL</label>
+                                    <input type="url" id="contribUrl" placeholder="https://..." required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contribSummary">Brief Summary</label>
+                                    <textarea id="contribSummary" placeholder="What's the key point of this article?" required></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contribQuestion">Specific Question (optional)</label>
+                                    <textarea id="contribQuestion" placeholder="Any specific aspect you'd like me to analyze?"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn">Submit for Analysis</button>
+                            </form>
+                        </div>
+                        
+                        <div class="articles-list" id="contributionsList">
+                            <div class="article-item">
+                                <h3>Community Contribution: AI Regulation Impact</h3>
+                                <div class="article-meta">Submitted: 2025-01-10 | Contributor: Anonymous</div>
+                                <span class="article-source">Financial Times</span>
+                                <p><strong>Article Summary:</strong> New EU AI regulations could impact US tech giants' European operations...</p>
+                                <p><strong>My Analysis:</strong> Regulatory arbitrage opportunities emerging. Companies with robust compliance frameworks (MSFT, GOOGL) likely to benefit vs. smaller AI startups facing barriers to entry. Estimated 15-20% compliance costs could consolidate market further. Watch for geographic revenue mix shifts in Q2 earnings...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resume" class="resume-section">
+            <div class="container">
+                <h2 class="section-title">Resume & Experience</h2>
+                <div class="resume-content">
+                    <p>Download my complete resume to explore my experience, education, and achievements in data analytics and business intelligence.</p>
+                    
+                    <div style="margin: 48px 0;">
+                        <h3 style="color: #24292f; font-size: 24px; margin-bottom: 24px;">Current Experience Stack:</h3>
+                        <ul style="text-align: left; max-width: 600px; margin: 16px auto; color: #656d76; font-size: 16px; line-height: 1.8;">
+                            <li><strong style="color: #0969da;">AI Researcher</strong> - Algoverse</li>
+                            <li><strong style="color: #0969da;">Financial Analyst Intern</strong> - Congero Technology Group</li>
+                            <li><strong style="color: #0969da;">Tech Production Intern</strong> - Kigumi Group</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#" class="resume-download" onclick="alert('Resume download will be available soon! Please contact for the latest version.')">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                    
+                    <a href="https://github.com/hanz-01105" class="resume-download" target="_blank">
+                        <i class="fab fa-github"></i> View GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
