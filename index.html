@@ -110,6 +110,47 @@
             text-align: center;
             background: #0d1117;
             position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #0d1117 0%, #161b22 50%, #0d1117 100%);
+            opacity: 0.9;
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: 'import pandas as pd\nimport numpy as np\nfrom sklearn.model_selection import train_test_split\nfrom tensorflow import keras\n\ndef analyze_market_data(data):\n    # Data preprocessing\n    cleaned_data = data.dropna()\n    features = cleaned_data[["price", "volume", "sentiment"]]\n    \n    # Machine learning pipeline\n    X_train, X_test, y_train, y_test = train_test_split(features, target)\n    \n    model = keras.Sequential([\n        keras.layers.Dense(128, activation="relu"),\n        keras.layers.Dropout(0.3),\n        keras.layers.Dense(64, activation="relu"),\n        keras.layers.Dense(1, activation="sigmoid")\n    ])\n    \n    model.compile(optimizer="adam", loss="binary_crossentropy")\n    history = model.fit(X_train, y_train, epochs=100)\n    \n    predictions = model.predict(X_test)\n    return predictions\n\n# Financial analysis queries\nSELECT company, revenue, profit_margin\nFROM financial_data \nWHERE sector = "technology"\nORDER BY market_cap DESC;\n\n# Data visualization\nplt.figure(figsize=(12, 8))\nplt.plot(dates, stock_prices, label="Stock Price")\nplt.plot(dates, moving_average, label="MA(20)")\nplt.title("Market Analysis Dashboard")\nplt.legend()\nplt.show()\n\nclass PortfolioOptimizer:\n    def __init__(self, assets, returns):\n        self.assets = assets\n        self.returns = returns\n    \n    def calculate_sharpe_ratio(self, weights):\n        portfolio_return = np.sum(self.returns.mean() * weights)\n        portfolio_std = np.sqrt(np.dot(weights.T, np.dot(self.returns.cov(), weights)))\n        return portfolio_return / portfolio_std\n    \n    def optimize(self):\n        # Modern Portfolio Theory implementation\n        constraints = {"type": "eq", "fun": lambda x: np.sum(x) - 1}\n        bounds = tuple((0, 1) for _ in range(len(self.assets)))\n        \n        result = minimize(self.negative_sharpe, x0, constraints=constraints, bounds=bounds)\n        return result.x';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+            color: #238636;
+            opacity: 0.15;
+            white-space: pre;
+            pointer-events: none;
+            animation: codeScroll 120s linear infinite;
+            z-index: 2;
+        }
+
+        @keyframes codeScroll {
+            0% { transform: translate(-10%, -10%) rotate(-15deg); }
+            100% { transform: translate(-60%, -60%) rotate(-15deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
         }
 
         .hero-content h1 {
