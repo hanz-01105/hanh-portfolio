@@ -6,6 +6,16 @@
     <title>Hanh Le - Data & Business Analytics Professional</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        :root {
+            --primary-navy: #0c2c50;
+            --secondary-navy: #5a6783;
+            --light-navy: #a3a9b8;
+            --light-gray: #f1f1f1;
+            --light-coral: #f0b8b8;
+            --coral: #e67f83;
+            --dark-coral: #d43d51;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -15,12 +25,12 @@
         body {
             font-family: 'Times New Roman', Times, serif;
             line-height: 1.6;
-            color: #2c3e50;
-            background: #87ceeb;
+            color: var(--primary-navy);
+            background: var(--light-gray);
             min-height: 100vh;
         }
 
-        /* Beach theme animated background */
+        /* Elegant animated background */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -29,12 +39,12 @@
             height: 100%;
             z-index: -1;
             background: linear-gradient(
-                180deg, 
-                #87ceeb 0%,     /* Sky blue */
-                #b0e0e6 30%,    /* Powder blue */
-                #40e0d0 60%,    /* Turquoise */
-                #20b2aa 80%,    /* Light sea green */
-                #f4a460 100%    /* Sandy brown */
+                135deg, 
+                var(--light-gray) 0%,
+                var(--light-navy) 25%,
+                var(--secondary-navy) 50%,
+                var(--light-coral) 75%,
+                var(--coral) 100%
             );
         }
 
@@ -45,31 +55,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="30" cy="40" r="2" fill="%23ffffff" opacity="0.8"/><circle cx="160" cy="80" r="3" fill="%23ffffff" opacity="0.6"/><circle cx="80" cy="120" r="1.5" fill="%23ffffff" opacity="0.9"/><circle cx="140" cy="160" r="2.5" fill="%23ffffff" opacity="0.7"/><path d="M20,180 Q60,175 100,180 T180,175" stroke="%23ffffff" stroke-width="1" fill="none" opacity="0.4"/></svg>') repeat;
-            animation: beachWaves 25s infinite linear;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="30" cy="40" r="2" fill="%23ffffff" opacity="0.3"/><circle cx="160" cy="80" r="3" fill="%23ffffff" opacity="0.2"/><circle cx="80" cy="120" r="1.5" fill="%23ffffff" opacity="0.4"/><circle cx="140" cy="160" r="2.5" fill="%23ffffff" opacity="0.25"/></svg>') repeat;
+            animation: floatingElements 30s infinite linear;
         }
 
-        .bg-animation::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(
-                0deg,
-                #f4a460 0%,
-                #daa520 30%,
-                rgba(244, 164, 96, 0.8) 70%,
-                transparent 100%
-            );
-            z-index: 1;
-        }
-
-        @keyframes beachWaves {
+        @keyframes floatingElements {
             0% { transform: translateX(0px) translateY(0px); }
-            33% { transform: translateX(-20px) translateY(-10px); }
-            66% { transform: translateX(20px) translateY(10px); }
+            33% { transform: translateX(-15px) translateY(-8px); }
+            66% { transform: translateX(15px) translateY(8px); }
             100% { transform: translateX(0px) translateY(0px); }
         }
 
@@ -81,16 +74,16 @@
             z-index: 1;
         }
 
-        /* Header - GitHub dark style */
+        /* Header - Navy style */
         header {
-            background: #21262d;
-            backdrop-filter: blur(15px);
+            background: rgba(12, 44, 80, 0.95);
+            backdrop-filter: blur(20px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #30363d;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+            border-bottom: 2px solid var(--light-navy);
+            box-shadow: 0 4px 20px rgba(12, 44, 80, 0.3);
         }
 
         nav {
@@ -101,11 +94,11 @@
         }
 
         .logo {
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 600;
-            color: #ffffff;
+            color: var(--light-gray);
             font-family: 'Times New Roman', Times, serif;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
 
         .nav-links {
@@ -116,25 +109,26 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #ffffff;
+            color: var(--light-gray);
             font-weight: 500;
             font-size: 14px;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
             padding: 8px 16px;
-            border-radius: 6px;
+            border-radius: 8px;
             font-family: 'Times New Roman', Times, serif;
         }
 
         .nav-links a:hover {
-            color: #58a6ff;
-            background: rgba(88, 166, 255, 0.1);
+            color: var(--light-coral);
+            background: rgba(240, 184, 184, 0.2);
+            transform: translateY(-2px);
         }
 
         /* Hero Section */
         .hero {
             padding: 120px 0 80px;
             text-align: center;
-            background: #0d1117;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -146,13 +140,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, #0d1117 0%, #161b22 50%, #0d1117 100%);
-            opacity: 0.9;
+            background: linear-gradient(45deg, rgba(12, 44, 80, 0.9) 0%, rgba(90, 103, 131, 0.8) 100%);
             z-index: 1;
         }
 
         .hero::after {
-            content: 'import pandas as pd\nimport numpy as np\nfrom sklearn.model_selection import train_test_split\nfrom tensorflow import keras\n\ndef analyze_market_data(data):\n    # Data preprocessing\n    cleaned_data = data.dropna()\n    features = cleaned_data[["price", "volume", "sentiment"]]\n    \n    # Machine learning pipeline\n    X_train, X_test, y_train, y_test = train_test_split(features, target)\n    \n    model = keras.Sequential([\n        keras.layers.Dense(128, activation="relu"),\n        keras.layers.Dropout(0.3),\n        keras.layers.Dense(64, activation="relu"),\n        keras.layers.Dense(1, activation="sigmoid")\n    ])\n    \n    model.compile(optimizer="adam", loss="binary_crossentropy")\n    history = model.fit(X_train, y_train, epochs=100)\n    \n    predictions = model.predict(X_test)\n    return predictions\n\n# Financial analysis queries\nSELECT company, revenue, profit_margin\nFROM financial_data \nWHERE sector = "technology"\nORDER BY market_cap DESC;\n\n# Data visualization\nplt.figure(figsize=(12, 8))\nplt.plot(dates, stock_prices, label="Stock Price")\nplt.plot(dates, moving_average, label="MA(20)")\nplt.title("Market Analysis Dashboard")\nplt.legend()\nplt.show()\n\nclass PortfolioOptimizer:\n    def __init__(self, assets, returns):\n        self.assets = assets\n        self.returns = returns\n    \n    def calculate_sharpe_ratio(self, weights):\n        portfolio_return = np.sum(self.returns.mean() * weights)\n        portfolio_std = np.sqrt(np.dot(weights.T, np.dot(self.returns.cov(), weights)))\n        return portfolio_return / portfolio_std\n    \n    def optimize(self):\n        # Modern Portfolio Theory implementation\n        constraints = {"type": "eq", "fun": lambda x: np.sum(x) - 1}\n        bounds = tuple((0, 1) for _ in range(len(self.assets)))\n        \n        result = minimize(self.negative_sharpe, x0, constraints=constraints, bounds=bounds)\n        return result.x';
+            content: 'import pandas as pd\nimport numpy as np\nfrom sklearn.model_selection import train_test_split\nfrom tensorflow import keras\n\ndef analyze_market_data(data):\n    # Data preprocessing\n    cleaned_data = data.dropna()\n    features = cleaned_data[["price", "volume", "sentiment"]]\n    \n    # Machine learning pipeline\n    X_train, X_test, y_train, y_test = train_test_split(features, target)\n    \n    model = keras.Sequential([\n        keras.layers.Dense(128, activation="relu"),\n        keras.layers.Dropout(0.3),\n        keras.layers.Dense(64, activation="relu"),\n        keras.layers.Dense(1, activation="sigmoid")\n    ])\n    \n    model.compile(optimizer="adam", loss="binary_crossentropy")\n    history = model.fit(X_train, y_train, epochs=100)\n    \n    predictions = model.predict(X_test)\n    return predictions';
             position: absolute;
             top: 0;
             left: 0;
@@ -161,8 +154,8 @@
             font-family: 'Courier New', monospace;
             font-size: 11px;
             line-height: 1.4;
-            color: #238636;
-            opacity: 0.15;
+            color: var(--light-coral);
+            opacity: 0.1;
             white-space: pre;
             pointer-events: none;
             animation: codeScroll 120s linear infinite;
@@ -182,23 +175,23 @@
         .hero-content h1 {
             font-size: 48px;
             margin-bottom: 16px;
-            color: #ffffff;
+            color: var(--light-gray);
             font-weight: 600;
             font-family: 'Times New Roman', Times, serif;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         .hero-content h2 {
             font-size: 24px;
             margin-bottom: 24px;
-            color: #8b949e;
+            color: var(--light-navy);
             font-weight: 400;
             font-family: 'Times New Roman', Times, serif;
         }
 
         .typing-text {
             font-size: 16px;
-            color: #8b949e;
+            color: var(--light-navy);
             margin-bottom: 32px;
             min-height: 24px;
             font-family: 'Times New Roman', Times, serif;
@@ -209,13 +202,14 @@
             font-style: italic;
             margin: 32px 0;
             padding: 24px 32px;
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 6px;
+            background: rgba(240, 184, 184, 0.2);
+            border: 2px solid var(--light-coral);
+            border-radius: 12px;
             display: inline-block;
-            color: #ffffff;
+            color: var(--light-gray);
             font-weight: 500;
             font-family: 'Times New Roman', Times, serif;
+            backdrop-filter: blur(10px);
         }
 
         .social-links {
@@ -229,21 +223,24 @@
             display: inline-flex;
             align-items: center;
             padding: 12px 24px;
-            background: #21262d;
-            color: #ffffff;
+            background: rgba(163, 169, 184, 0.2);
+            color: var(--light-gray);
             text-decoration: none;
-            border: 1px solid #30363d;
-            border-radius: 6px;
-            transition: all 0.2s;
+            border: 2px solid var(--light-navy);
+            border-radius: 8px;
+            transition: all 0.3s ease;
             font-weight: 500;
             font-size: 14px;
             font-family: 'Times New Roman', Times, serif;
+            backdrop-filter: blur(10px);
         }
 
         .social-links a:hover {
-            background: #238636;
-            color: #ffffff;
-            border-color: #238636;
+            background: var(--coral);
+            color: white;
+            border-color: var(--dark-coral);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(230, 127, 131, 0.4);
         }
 
         .social-links i {
@@ -260,14 +257,14 @@
             text-align: center;
             font-size: 32px;
             margin-bottom: 48px;
-            color: #ffffff;
+            color: var(--primary-navy);
             font-weight: 600;
             font-family: 'Times New Roman', Times, serif;
         }
 
         /* About Section */
         .about {
-            background: #161b22;
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--light-navy) 100%);
         }
 
         .about-content {
@@ -280,12 +277,14 @@
         .about-text {
             font-size: 16px;
             line-height: 1.6;
-            background: #21262d;
+            background: rgba(255, 255, 255, 0.8);
             padding: 32px;
-            border-radius: 6px;
-            border: 1px solid #30363d;
-            color: #ffffff;
+            border-radius: 12px;
+            border: 2px solid var(--light-navy);
+            color: var(--primary-navy);
             font-family: 'Times New Roman', Times, serif;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(12, 44, 80, 0.1);
         }
 
         .about-text p {
@@ -299,20 +298,23 @@
         }
 
         .skill-category {
-            background: #21262d;
+            background: rgba(255, 255, 255, 0.9);
             padding: 24px;
-            border-radius: 6px;
-            border: 1px solid #30363d;
-            transition: all 0.2s;
+            border-radius: 12px;
+            border: 2px solid var(--secondary-navy);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(12, 44, 80, 0.1);
         }
 
         .skill-category:hover {
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
-            border-color: #238636;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(12, 44, 80, 0.2);
+            border-color: var(--coral);
         }
 
         .skill-category h4 {
-            color: #58a6ff;
+            color: var(--primary-navy);
             margin-bottom: 16px;
             font-size: 16px;
             font-weight: 600;
@@ -326,24 +328,29 @@
         }
 
         .skill-tag {
-            background: #238636;
+            background: var(--coral);
             color: white;
-            padding: 4px 12px;
-            border-radius: 12px;
+            padding: 6px 14px;
+            border-radius: 20px;
             font-size: 12px;
             font-weight: 500;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
             font-family: 'Times New Roman', Times, serif;
+            border: 1px solid var(--dark-coral);
         }
 
         .skill-tag:hover {
-            background: #2ea043;
-            transform: translateY(-1px);
+            background: var(--dark-coral);
+            transform: scale(1.05);
         }
 
         /* Projects Section */
         .projects {
-            background: #0d1117;
+            background: linear-gradient(135deg, var(--secondary-navy) 0%, var(--light-coral) 100%);
+        }
+
+        .projects .section-title {
+            color: white;
         }
 
         .projects-grid {
@@ -353,20 +360,23 @@
         }
 
         .project-card {
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid var(--light-navy);
+            border-radius: 16px;
             padding: 32px;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 32px rgba(12, 44, 80, 0.2);
         }
 
         .project-card:hover {
-            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
-            border-color: #238636;
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 16px 48px rgba(12, 44, 80, 0.3);
+            border-color: var(--coral);
         }
 
         .project-card h3 {
-            color: #58a6ff;
+            color: var(--primary-navy);
             margin-bottom: 16px;
             font-size: 20px;
             font-weight: 600;
@@ -374,7 +384,7 @@
         }
 
         .project-card p {
-            color: #8b949e;
+            color: var(--secondary-navy);
             margin-bottom: 16px;
             line-height: 1.5;
             font-family: 'Times New Roman', Times, serif;
@@ -386,25 +396,28 @@
 
         .project-links a {
             display: inline-block;
-            padding: 8px 16px;
-            background: #238636;
+            padding: 10px 20px;
+            background: var(--coral);
             color: white;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 8px;
             margin-right: 8px;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
             font-weight: 500;
             font-size: 14px;
             font-family: 'Times New Roman', Times, serif;
+            border: 2px solid var(--dark-coral);
         }
 
         .project-links a:hover {
-            background: #2ea043;
+            background: var(--dark-coral);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(212, 61, 81, 0.3);
         }
 
         /* Articles Section */
         .articles {
-            background: #161b22;
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--light-navy) 100%);
         }
 
         .articles-container {
@@ -417,7 +430,7 @@
         }
 
         .my-articles h3 {
-            color: #ffffff;
+            color: var(--primary-navy);
             font-size: 24px;
             margin-bottom: 32px;
             text-align: center;
@@ -426,15 +439,17 @@
         }
 
         .article-form {
-            background: #21262d;
+            background: rgba(255, 255, 255, 0.9);
             padding: 32px;
-            border-radius: 6px;
-            border: 1px solid #30363d;
+            border-radius: 16px;
+            border: 2px solid var(--secondary-navy);
             margin-bottom: 48px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(12, 44, 80, 0.1);
         }
 
         .contributions-section h3 {
-            color: #ffffff;
+            color: var(--primary-navy);
             font-size: 20px;
             margin-bottom: 32px;
             text-align: center;
@@ -450,7 +465,7 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: #ffffff;
+            color: var(--primary-navy);
             font-size: 14px;
             font-family: 'Times New Roman', Times, serif;
         }
@@ -459,21 +474,21 @@
         .form-group textarea {
             width: 100%;
             padding: 12px;
-            border: 1px solid #30363d;
-            border-radius: 6px;
+            border: 2px solid var(--light-navy);
+            border-radius: 8px;
             font-size: 14px;
-            transition: all 0.2s;
-            background: #0d1117;
-            color: #ffffff;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary-navy);
             font-family: 'Times New Roman', Times, serif;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #238636;
-            box-shadow: 0 0 0 3px rgba(35, 134, 54, 0.3);
-            background: #161b22;
+            border-color: var(--coral);
+            box-shadow: 0 0 0 3px rgba(230, 127, 131, 0.2);
+            background: white;
         }
 
         .form-group textarea {
@@ -482,20 +497,22 @@
         }
 
         .btn {
-            background: #238636;
+            background: var(--coral);
             color: white;
             padding: 12px 24px;
-            border: none;
-            border-radius: 6px;
+            border: 2px solid var(--dark-coral);
+            border-radius: 8px;
             cursor: pointer;
             font-size: 14px;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
             font-weight: 500;
             font-family: 'Times New Roman', Times, serif;
         }
 
         .btn:hover {
-            background: #2ea043;
+            background: var(--dark-coral);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(212, 61, 81, 0.3);
         }
 
         .articles-list {
@@ -504,20 +521,23 @@
         }
 
         .article-item {
-            background: #21262d;
+            background: rgba(255, 255, 255, 0.9);
             padding: 32px;
-            border-radius: 6px;
-            border: 1px solid #30363d;
-            transition: all 0.2s;
+            border-radius: 16px;
+            border: 2px solid var(--light-navy);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(12, 44, 80, 0.1);
         }
 
         .article-item:hover {
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
-            border-color: #238636;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(12, 44, 80, 0.2);
+            border-color: var(--coral);
         }
 
         .article-item h3 {
-            color: #ffffff;
+            color: var(--primary-navy);
             margin-bottom: 8px;
             font-size: 18px;
             font-weight: 600;
@@ -525,7 +545,7 @@
         }
 
         .article-meta {
-            color: #8b949e;
+            color: var(--secondary-navy);
             font-size: 14px;
             margin-bottom: 16px;
             font-family: 'Times New Roman', Times, serif;
@@ -533,19 +553,19 @@
 
         .article-source {
             display: inline-block;
-            background: #161b22;
-            color: #58a6ff;
-            padding: 4px 12px;
-            border-radius: 12px;
+            background: var(--light-coral);
+            color: var(--primary-navy);
+            padding: 6px 14px;
+            border-radius: 20px;
             font-size: 12px;
             margin-bottom: 16px;
             font-weight: 500;
-            border: 1px solid #30363d;
+            border: 1px solid var(--coral);
             font-family: 'Times New Roman', Times, serif;
         }
 
         .article-item p {
-            color: #8b949e;
+            color: var(--secondary-navy);
             line-height: 1.5;
             margin-bottom: 12px;
             font-family: 'Times New Roman', Times, serif;
@@ -553,7 +573,11 @@
 
         /* Resume Section */
         .resume-section {
-            background: #0d1117;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--coral) 100%);
+        }
+
+        .resume-section .section-title {
+            color: white;
         }
 
         .resume-content {
@@ -561,55 +585,65 @@
         }
 
         .resume-content p {
-            color: #8b949e;
+            color: var(--light-gray);
             font-size: 16px;
             margin-bottom: 24px;
             font-family: 'Times New Roman', Times, serif;
         }
 
         .resume-content ul {
-            color: #8b949e;
+            color: var(--light-gray);
             font-size: 16px;
         }
 
         .resume-download {
             display: inline-block;
-            background: #238636;
+            background: rgba(255, 255, 255, 0.2);
             color: white;
             padding: 16px 32px;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 12px;
             font-size: 16px;
             margin: 16px;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
             font-weight: 500;
             font-family: 'Times New Roman', Times, serif;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
         }
 
         .resume-download:hover {
-            background: #2ea043;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
         }
 
         /* Footer */
         footer {
-            background: #21262d;
-            color: #ffffff;
+            background: var(--primary-navy);
+            color: var(--light-gray);
             text-align: center;
             padding: 48px 0;
-            border-top: 1px solid #30363d;
+            border-top: 3px solid var(--coral);
             font-family: 'Times New Roman', Times, serif;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-gray);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary-navy);
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--coral);
         }
 
         /* Responsive */
@@ -634,24 +668,6 @@
             .projects-grid {
                 grid-template-columns: 1fr;
             }
-        }
-
-        /* GitHub-style scrollbar */
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f6f8fa;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #d0d7de;
-            border-radius: 6px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #0969da;
         }
     </style>
 </head>
@@ -821,41 +837,9 @@
                                 <p><strong>Market Signal:</strong> Polarn O. Pyret (Swedish children's outerwear) exits US market by year-end due to tariff costs adding hundreds of thousands in inventory expenses...</p>
                                 <p><strong>My Analysis:</strong> This exemplifies tariff elasticity destroying market viability for mid-tier international brands. Currency depreciation + tariff duties create compound cost pressure that pricing power cannot absorb. Retail sector analysis shows similar patterns across European apparel imports. Investment thesis: Short international retail ETFs with heavy US exposure, long domestic manufacturing plays. The broader trend suggests continued market share consolidation favoring domestic producers and large-scale importers with tariff absorption capacity.</p>
                             </div>
-
-                            <div class="article-item">
-                                <h3>Big Tech Cash Flow Paradox: AI Infrastructure vs Liquidity</h3>
-                                <div class="article-meta">Published: August 8, 2025 | Author: Hanh Le</div>
-                                <a href="https://www.wsj.com/economy/the-ai-booms-hidden-risk-to-the-economy-731b00d6?mod=economy_trendingnow_article_pos4" target="_blank" class="article-source">Wall Street Journal Analysis</a>
-                                <p><strong>Market Signal:</strong> Microsoft, Meta report 73% net income growth but 30% free cash flow decline due to massive AI infrastructure capex...</p>
-                                <p><strong>My Analysis:</strong> This represents a fundamental business model transformation from asset-light to asset-heavy operations. The cash flow divergence signals potential liquidity risks reminiscent of dot-com era overcapitalization. While these companies drive >50% of recent GDP growth, the revenue timeline from AI investments remains speculative. Historical analysis suggests infrastructure-heavy tech spending cycles require 3-5 years for ROI realization. Risk assessment: Monitor debt-to-cash ratios and infrastructure utilization rates. The macroeconomic implication supports higher interest rates to manage this capital intensity.</p>
-                            </div>
-
-                            <div class="article-item">
-                                <h3>Meta vs Apple: The Next Computing Platform War</h3>
-                                <div class="article-meta">Published: August 6, 2025 | Author: Hanh Le</div>
-                                <a href="https://www.wsj.com/tech/ai/mark-zuckerberg-just-declared-war-on-the-iphone-30163885?mod=business_trendingnow_article_pos2" target="_blank" class="article-source">Wall Street Journal Analysis</a>
-                                <p><strong>Market Signal:</strong> Zuckerberg positions AI-infused smart glasses as iPhone replacement, betting on "personal superintelligence" over smartphone dominance...</p>
-                                <p><strong>My Analysis:</strong> Meta faces significant platform displacement challenges. Apple controls the ecosystem, distribution, and user trust - advantages that create switching cost moats. For Meta to succeed, AI glasses need 10x compelling use cases over smartphones. Historical precedent shows platform wars favor incumbents with ecosystem lock-in (see: Windows vs competitors). Investment angle: Meta's AR/VR pivot is high-risk, high-reward. Apple's defensive position more stable but limits upside. Watch for "killer app" development and enterprise adoption rates as leading indicators of market traction.</p>
-                            </div>
-
-                            <div class="article-item">
-                                <h3>JPMorgan-Apple Credit Card Deal: Strategic Banking Realignment</h3>
-                                <div class="article-meta">Published: August 1, 2025 | Author: Hanh Le</div>
-                                <a href="https://www.wsj.com/finance/banking/jpmorgan-chase-nears-a-deal-to-take-over-apples-credit-card-program-0bbcdda8?mod=finance_lead_pos1" target="_blank" class="article-source">Wall Street Journal Analysis</a>
-                                <p><strong>Market Signal:</strong> JPMorgan Chase negotiating to take over Apple Card program from Goldman Sachs, potentially the largest consumer credit partnership deal...</p>
-                                <p><strong>My Analysis:</strong> This represents optimal capital allocation across all three parties. Goldman exits consumer credit losses to focus on institutional banking (higher ROE). JPMorgan leverages existing consumer infrastructure to capture Apple's premium customer base. Apple gains operational reliability from the market leader in consumer credit. Strategic implications: Validates that investment banks should stick to core competencies rather than chase consumer trends. JPMorgan's scale advantages in risk management and operational efficiency justify taking this business at appropriate pricing. Expect deeper Apple-JPM financial integration.</p>
-                            </div>
-
-                            <div class="article-item">
-                                <h3>McKinsey Leadership Reform: Corporate Governance Evolution</h3>
-                                <div class="article-meta">Published: July 25, 2025 | Author: Hanh Le</div>
-                                <a href="https://www.wsj.com/business/mckinsey-seeks-to-avoid-new-succession-dramas-with-changes-to-its-elections-9db992c1" target="_blank" class="article-source">Wall Street Journal Analysis</a>
-                                <p><strong>Market Signal:</strong> McKinsey changes from 3-year terms with re-election to single 6-year terms, reduces board from 30 to 12 partners...</p>
-                                <p><strong>My Analysis:</strong> This governance restructuring addresses the instability that damaged McKinsey during the opioid crisis and succession battles. The reform reduces internal politicking and extends strategic planning horizons. Historical context: Sneader's ouster after implementing client selection reforms shows how partnership dynamics can conflict with risk management. The new structure provides leadership insulation from short-term partner pressures while maintaining accountability through mid-term confirmation votes. Broader consulting industry implications: Expect similar governance modernization at other partnership-based firms facing reputational risks.</p>
-                            </div>
                         </div>
 
-                        <!-- Form for me to add articles -->
+                        <!-- Form for publishing insights -->
                         <div class="article-form">
                             <h3>Publish New Insight</h3>
                             <p>Share your latest market analysis and insights</p>
@@ -894,7 +878,7 @@
                     <!-- Community Contributions Section -->
                     <div class="contributions-section">
                         <h3>Community Contributions</h3>
-                        <p style="text-align: center; color: #8b949e; margin-bottom: 32px;">Share interesting articles and get my analytical perspective</p>
+                        <p style="text-align: center; color: #5a6783; margin-bottom: 32px;">Share interesting articles and get my analytical perspective</p>
                         
                         <div class="article-form">
                             <h3>Submit Article for Analysis</h3>
@@ -929,16 +913,6 @@
                                 <button type="submit" class="btn">Submit for Analysis</button>
                             </form>
                         </div>
-                        
-                        <div class="articles-list" id="contributionsList">
-                            <div class="article-item">
-                                <h3>Community Contribution: AI Regulation Impact</h3>
-                                <div class="article-meta">Submitted: 2025-01-10 | Contributor: Anonymous</div>
-                                <span class="article-source">Financial Times</span>
-                                <p><strong>Article Summary:</strong> New EU AI regulations could impact US tech giants' European operations...</p>
-                                <p><strong>My Analysis:</strong> Regulatory arbitrage opportunities emerging. Companies with robust compliance frameworks (MSFT, GOOGL) likely to benefit vs. smaller AI startups facing barriers to entry. Estimated 15-20% compliance costs could consolidate market further. Watch for geographic revenue mix shifts in Q2 earnings...</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -951,11 +925,11 @@
                     <p>Download my complete resume to explore my experience, education, and achievements in data analytics and business intelligence.</p>
                     
                     <div style="margin: 48px 0;">
-                        <h3 style="color: #8b949e; font-size: 24px; margin-bottom: 24px;">Current Experience Stack:</h3>
-                        <ul style="text-align: left; max-width: 600px; margin: 16px auto; color: #8b949e; font-size: 16px; line-height: 1.8;">
-                            <li><strong style="color: #238636;">AI Researcher</strong> - Algoverse</li>
-                            <li><strong style="color: #238636;">Financial Analyst Intern</strong> - Congero Technology Group</li>
-                            <li><strong style="color: #238636;">Tech Production Intern</strong> - Kigumi Group</li>
+                        <h3 style="color: #a3a9b8; font-size: 24px; margin-bottom: 24px;">Current Experience Stack:</h3>
+                        <ul style="text-align: left; max-width: 600px; margin: 16px auto; color: #f1f1f1; font-size: 16px; line-height: 1.8;">
+                            <li><strong style="color: #e67f83;">AI Researcher</strong> - Algoverse</li>
+                            <li><strong style="color: #e67f83;">Financial Analyst Intern</strong> - Congero Technology Group</li>
+                            <li><strong style="color: #e67f83;">Tech Production Intern</strong> - Kigumi Group</li>
                         </ul>
                     </div>
                     
@@ -975,7 +949,7 @@
         <div class="container">
             <p>&copy; 2025 Hanh Le. All rights reserved.</p>
             <p>"Turning data into decisions, insights into impact"</p>
-            <p style="color: #238636; margin-top: 16px;">Built with passion for analytics</p>
+            <p style="color: #e67f83; margin-top: 16px;">Built with passion for analytics</p>
         </div>
     </footer>
 
@@ -1079,51 +1053,11 @@
             const summary = document.getElementById('contribSummary').value;
             const question = document.getElementById('contribQuestion').value;
             
-            // Create new contribution element
-            const contributionElement = document.createElement('div');
-            contributionElement.className = 'article-item';
-            contributionElement.innerHTML = `
-                <h3>Community Contribution: ${title}</h3>
-                <div class="article-meta">Submitted: ${new Date().toLocaleDateString()} | Contributor: Anonymous</div>
-                <a href="${url}" target="_blank" class="article-source">${source}</a>
-                <p><strong>Article Summary:</strong> ${summary}</p>
-                ${question ? `<p><strong>Question:</strong> ${question}</p>` : ''}
-                <p><strong>My Analysis:</strong> <em style="color: #58a6ff;">Analysis pending - I'll review this article and provide my insights soon!</em></p>
-            `;
-            
-            // Add to contributions list
-            document.getElementById('contributionsList').insertBefore(contributionElement, document.getElementById('contributionsList').firstChild);
+            alert('Article submitted for analysis! I will review and provide insights soon.');
             
             // Reset form
             this.reset();
-            
-            alert('Article submitted for analysis! I will review and provide insights soon.');
         });
-
-        // Add scroll-triggered animations
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const scrollTop = window.pageYOffset;
-
-            sections.forEach(section => {
-                const offset = section.offsetTop - 300;
-                if (scrollTop >= offset) {
-                    section.style.opacity = '1';
-                    section.style.transform = 'translateY(0)';
-                }
-            });
-        });
-
-        // Initialize sections with animation states
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0.3';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'all 0.6s ease';
-        });
-
-        // Make the first section visible immediately
-        document.querySelector('#home').style.opacity = '1';
-        document.querySelector('#home').style.transform = 'translateY(0)';
     </script>
 </body>
 </html>
