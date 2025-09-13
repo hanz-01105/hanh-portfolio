@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hanh Le - Data & Business Analytics Professional</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-navy: #0c2c50;
-            --secondary-navy: #5a6783;
-            --light-navy: #a3a9b8;
-            --light-gray: #f1f1f1;
-            --light-coral: #f0b8b8;
-            --coral: #e67f83;
-            --dark-coral: #d43d51;
+            --primary-blue: #80b0e2;
+            --secondary-blue: #c2d7f1;
+            --white: #ffffff;
+            --light-green: #d1deb7;
+            --primary-green: #a2be71;
+            --dark-text: #2c3e50;
         }
 
         * {
@@ -23,10 +23,11 @@
         }
 
         body {
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
+            font-weight: 400;
             line-height: 1.6;
-            color: var(--primary-navy);
-            background: var(--light-gray);
+            color: var(--white);
+            background: var(--primary-green);
             min-height: 100vh;
         }
 
@@ -40,11 +41,11 @@
             z-index: -1;
             background: linear-gradient(
                 135deg, 
-                var(--light-gray) 0%,
-                var(--light-navy) 25%,
-                var(--secondary-navy) 50%,
-                var(--light-coral) 75%,
-                var(--coral) 100%
+                var(--primary-green) 0%,
+                var(--light-green) 25%,
+                var(--secondary-blue) 50%,
+                var(--primary-blue) 75%,
+                var(--white) 100%
             );
         }
 
@@ -74,16 +75,16 @@
             z-index: 1;
         }
 
-        /* Header - Navy style */
+        /* Header - Green style */
         header {
-            background: rgba(12, 44, 80, 0.95);
+            background: rgba(162, 190, 113, 0.95);
             backdrop-filter: blur(20px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 2px solid var(--light-navy);
-            box-shadow: 0 4px 20px rgba(12, 44, 80, 0.3);
+            border-bottom: 2px solid var(--white);
+            box-shadow: 0 4px 20px rgba(162, 190, 113, 0.3);
         }
 
         nav {
@@ -96,8 +97,8 @@
         .logo {
             font-size: 16px;
             font-weight: 600;
-            color: var(--light-gray);
-            font-family: 'Times New Roman', Times, serif;
+            color: var(--white);
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
             letter-spacing: 1px;
         }
 
@@ -109,18 +110,18 @@
 
         .nav-links a {
             text-decoration: none;
-            color: var(--light-gray);
+            color: var(--white);
             font-weight: 500;
             font-size: 14px;
             transition: all 0.3s ease;
             padding: 8px 16px;
             border-radius: 8px;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
         }
 
         .nav-links a:hover {
-            color: var(--light-coral);
-            background: rgba(240, 184, 184, 0.2);
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
         }
 
@@ -128,7 +129,7 @@
         .hero {
             padding: 120px 0 80px;
             text-align: center;
-            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-blue) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -140,7 +141,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, rgba(12, 44, 80, 0.9) 0%, rgba(90, 103, 131, 0.8) 100%);
+            background: linear-gradient(45deg, rgba(162, 190, 113, 0.9) 0%, rgba(128, 176, 226, 0.8) 100%);
             z-index: 1;
         }
 
@@ -154,7 +155,7 @@
             font-family: 'Courier New', monospace;
             font-size: 11px;
             line-height: 1.4;
-            color: var(--light-coral);
+            color: var(--white);
             opacity: 0.1;
             white-space: pre;
             pointer-events: none;
@@ -175,26 +176,26 @@
         .hero-content h1 {
             font-size: 48px;
             margin-bottom: 16px;
-            color: var(--light-gray);
+            color: var(--white);
             font-weight: 600;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
             letter-spacing: 3px;
         }
 
         .hero-content h2 {
             font-size: 24px;
             margin-bottom: 24px;
-            color: var(--light-navy);
+            color: var(--white);
             font-weight: 400;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
         }
 
         .typing-text {
             font-size: 16px;
-            color: var(--light-navy);
+            color: var(--white);
             margin-bottom: 32px;
             min-height: 24px;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
         }
 
         .motto {
@@ -202,13 +203,13 @@
             font-style: italic;
             margin: 32px 0;
             padding: 24px 32px;
-            background: rgba(240, 184, 184, 0.2);
-            border: 2px solid var(--light-coral);
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid var(--white);
             border-radius: 12px;
             display: inline-block;
-            color: var(--light-gray);
+            color: var(--white);
             font-weight: 500;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
             backdrop-filter: blur(10px);
         }
 
@@ -223,24 +224,24 @@
             display: inline-flex;
             align-items: center;
             padding: 12px 24px;
-            background: rgba(163, 169, 184, 0.2);
-            color: var(--light-gray);
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
             text-decoration: none;
-            border: 2px solid var(--light-navy);
+            border: 2px solid var(--white);
             border-radius: 8px;
             transition: all 0.3s ease;
             font-weight: 500;
             font-size: 14px;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
             backdrop-filter: blur(10px);
         }
 
         .social-links a:hover {
-            background: var(--coral);
-            color: white;
-            border-color: var(--dark-coral);
+            background: rgba(255, 255, 255, 0.4);
+            color: var(--white);
+            border-color: var(--white);
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(230, 127, 131, 0.4);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
         }
 
         .social-links i {
@@ -257,14 +258,14 @@
             text-align: center;
             font-size: 32px;
             margin-bottom: 48px;
-            color: var(--primary-navy);
+            color: var(--white);
             font-weight: 600;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
         }
 
         /* About Section */
         .about {
-            background: linear-gradient(135deg, var(--light-gray) 0%, var(--light-navy) 100%);
+            background: linear-gradient(135deg, var(--light-green) 0%, var(--secondary-blue) 100%);
         }
 
         .about-content {
@@ -277,14 +278,14 @@
         .about-text {
             font-size: 16px;
             line-height: 1.6;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             padding: 32px;
             border-radius: 12px;
-            border: 2px solid var(--light-navy);
-            color: var(--primary-navy);
-            font-family: 'Times New Roman', Times, serif;
+            border: 2px solid var(--white);
+            color: var(--dark-text);
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
             backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(12, 44, 80, 0.1);
+            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
         }
 
         .about-text p {
@@ -301,24 +302,24 @@
             background: rgba(255, 255, 255, 0.9);
             padding: 24px;
             border-radius: 12px;
-            border: 2px solid var(--secondary-navy);
+            border: 2px solid var(--white);
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(12, 44, 80, 0.1);
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
         }
 
         .skill-category:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(12, 44, 80, 0.2);
-            border-color: var(--coral);
+            box-shadow: 0 12px 40px rgba(255, 255, 255, 0.2);
+            border-color: var(--white);
         }
 
         .skill-category h4 {
-            color: var(--primary-navy);
+            color: var(--dark-text);
             margin-bottom: 16px;
             font-size: 16px;
             font-weight: 600;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
         }
 
         .skill-tags {
@@ -328,29 +329,30 @@
         }
 
         .skill-tag {
-            background: var(--coral);
-            color: white;
+            background: var(--primary-green);
+            color: var(--white);
             padding: 6px 14px;
             border-radius: 20px;
             font-size: 12px;
             font-weight: 500;
             transition: all 0.3s ease;
-            font-family: 'Times New Roman', Times, serif;
-            border: 1px solid var(--dark-coral);
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
+            border: 1px solid var(--white);
         }
 
         .skill-tag:hover {
-            background: var(--dark-coral);
+            background: var(--primary-blue);
+            color: var(--white);
             transform: scale(1.05);
         }
 
         /* Projects Section */
         .projects {
-            background: linear-gradient(135deg, var(--secondary-navy) 0%, var(--light-coral) 100%);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-green) 100%);
         }
 
         .projects .section-title {
-            color: white;
+            color: var(--white);
         }
 
         .projects-grid {
@@ -361,33 +363,33 @@
 
         .project-card {
             background: rgba(255, 255, 255, 0.95);
-            border: 2px solid var(--light-navy);
+            border: 2px solid var(--white);
             border-radius: 16px;
             padding: 32px;
             transition: all 0.3s ease;
             backdrop-filter: blur(15px);
-            box-shadow: 0 8px 32px rgba(12, 44, 80, 0.2);
+            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2);
         }
 
         .project-card:hover {
             transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 16px 48px rgba(12, 44, 80, 0.3);
-            border-color: var(--coral);
+            box-shadow: 0 16px 48px rgba(255, 255, 255, 0.3);
+            border-color: var(--white);
         }
 
         .project-card h3 {
-            color: var(--primary-navy);
+            color: var(--dark-text);
             margin-bottom: 16px;
             font-size: 20px;
             font-weight: 600;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
         }
 
         .project-card p {
-            color: var(--secondary-navy);
+            color: var(--dark-text);
             margin-bottom: 16px;
             line-height: 1.5;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
         }
 
         .project-links {
@@ -397,27 +399,28 @@
         .project-links a {
             display: inline-block;
             padding: 10px 20px;
-            background: var(--coral);
-            color: white;
+            background: var(--primary-green);
+            color: var(--white);
             text-decoration: none;
             border-radius: 8px;
             margin-right: 8px;
             transition: all 0.3s ease;
             font-weight: 500;
             font-size: 14px;
-            font-family: 'Times New Roman', Times, serif;
-            border: 2px solid var(--dark-coral);
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
+            border: 2px solid var(--white);
         }
 
         .project-links a:hover {
-            background: var(--dark-coral);
+            background: var(--primary-blue);
+            color: var(--white);
             transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(212, 61, 81, 0.3);
+            box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
         }
 
         /* Articles Section */
         .articles {
-            background: linear-gradient(135deg, var(--light-gray) 0%, var(--light-navy) 100%);
+            background: linear-gradient(135deg, var(--light-green) 0%, var(--secondary-blue) 100%);
         }
 
         .articles-container {
@@ -430,31 +433,31 @@
         }
 
         .my-articles h3 {
-            color: var(--primary-navy);
+            color: var(--white);
             font-size: 24px;
             margin-bottom: 32px;
             text-align: center;
             font-weight: 600;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
         }
 
         .article-form {
             background: rgba(255, 255, 255, 0.9);
             padding: 32px;
             border-radius: 16px;
-            border: 2px solid var(--secondary-navy);
+            border: 2px solid var(--white);
             margin-bottom: 48px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(12, 44, 80, 0.1);
+            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
         }
 
         .contributions-section h3 {
-            color: var(--primary-navy);
+            color: var(--white);
             font-size: 20px;
             margin-bottom: 32px;
             text-align: center;
             font-weight: 600;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
         }
 
         .form-group {
@@ -465,29 +468,29 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: var(--primary-navy);
+            color: var(--dark-text);
             font-size: 14px;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
             padding: 12px;
-            border: 2px solid var(--light-navy);
+            border: 2px solid var(--white);
             border-radius: 8px;
             font-size: 14px;
             transition: all 0.3s ease;
             background: rgba(255, 255, 255, 0.9);
-            color: var(--primary-navy);
-            font-family: 'Times New Roman', Times, serif;
+            color: var(--dark-text);
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--coral);
-            box-shadow: 0 0 0 3px rgba(230, 127, 131, 0.2);
+            border-color: var(--white);
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
             background: white;
         }
 
@@ -497,22 +500,23 @@
         }
 
         .btn {
-            background: var(--coral);
-            color: white;
+            background: var(--primary-green);
+            color: var(--white);
             padding: 12px 24px;
-            border: 2px solid var(--dark-coral);
+            border: 2px solid var(--white);
             border-radius: 8px;
             cursor: pointer;
             font-size: 14px;
             transition: all 0.3s ease;
             font-weight: 500;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
         }
 
         .btn:hover {
-            background: var(--dark-coral);
+            background: var(--primary-blue);
+            color: var(--white);
             transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(212, 61, 81, 0.3);
+            box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
         }
 
         .articles-list {
@@ -524,60 +528,60 @@
             background: rgba(255, 255, 255, 0.9);
             padding: 32px;
             border-radius: 16px;
-            border: 2px solid var(--light-navy);
+            border: 2px solid var(--white);
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(12, 44, 80, 0.1);
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
         }
 
         .article-item:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 32px rgba(12, 44, 80, 0.2);
-            border-color: var(--coral);
+            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2);
+            border-color: var(--white);
         }
 
         .article-item h3 {
-            color: var(--primary-navy);
+            color: var(--dark-text);
             margin-bottom: 8px;
             font-size: 18px;
             font-weight: 600;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
         }
 
         .article-meta {
-            color: var(--secondary-navy);
+            color: var(--dark-text);
             font-size: 14px;
             margin-bottom: 16px;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
         }
 
         .article-source {
             display: inline-block;
-            background: var(--light-coral);
-            color: var(--primary-navy);
+            background: var(--primary-green);
+            color: var(--white);
             padding: 6px 14px;
             border-radius: 20px;
             font-size: 12px;
             margin-bottom: 16px;
             font-weight: 500;
-            border: 1px solid var(--coral);
-            font-family: 'Times New Roman', Times, serif;
+            border: 1px solid var(--white);
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
         }
 
         .article-item p {
-            color: var(--secondary-navy);
+            color: var(--dark-text);
             line-height: 1.5;
             margin-bottom: 12px;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
         }
 
         /* Resume Section */
         .resume-section {
-            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--coral) 100%);
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-blue) 100%);
         }
 
         .resume-section .section-title {
-            color: white;
+            color: var(--white);
         }
 
         .resume-content {
@@ -585,21 +589,21 @@
         }
 
         .resume-content p {
-            color: var(--light-gray);
+            color: var(--white);
             font-size: 16px;
             margin-bottom: 24px;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
         }
 
         .resume-content ul {
-            color: var(--light-gray);
+            color: var(--white);
             font-size: 16px;
         }
 
         .resume-download {
             display: inline-block;
             background: rgba(255, 255, 255, 0.2);
-            color: white;
+            color: var(--white);
             padding: 16px 32px;
             text-decoration: none;
             border-radius: 12px;
@@ -607,25 +611,26 @@
             margin: 16px;
             transition: all 0.3s ease;
             font-weight: 500;
-            font-family: 'Times New Roman', Times, serif;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
+            border: 2px solid var(--white);
             backdrop-filter: blur(10px);
         }
 
         .resume-download:hover {
             background: rgba(255, 255, 255, 0.3);
+            color: var(--white);
             transform: translateY(-3px);
             box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
         }
 
         /* Footer */
         footer {
-            background: var(--primary-navy);
-            color: var(--light-gray);
+            background: var(--primary-green);
+            color: var(--white);
             text-align: center;
             padding: 48px 0;
-            border-top: 3px solid var(--coral);
-            font-family: 'Times New Roman', Times, serif;
+            border-top: 3px solid var(--white);
+            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
         }
 
         /* Custom scrollbar */
@@ -634,16 +639,16 @@
         }
 
         ::-webkit-scrollbar-track {
-            background: var(--light-gray);
+            background: var(--light-green);
         }
 
         ::-webkit-scrollbar-thumb {
-            background: var(--secondary-navy);
+            background: var(--white);
             border-radius: 6px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: var(--coral);
+            background: var(--primary-green);
         }
 
         /* Responsive */
@@ -693,7 +698,7 @@
                 <h1>HANH LE</h1>
                 <h2>Data & Business Analytics Professional</h2>
                 <div class="typing-text">
-                    <span id="typewriter">AI Researcher @ Algoverse | Financial Analyst @ Congero</span>
+                    <span id="typewriter">Data Scientist Intern @ IDX Exchange | AI Researcher @ Algoverse</span>
                 </div>
                 <div class="motto">
                     "To every problem, there is always a solution"
@@ -723,7 +728,8 @@
                         <p><strong>Data-driven Business Analytics student</strong></p>
                         <p><strong>Experience:</strong> AI research, financial modeling, tech consulting</p>
                         
-                        <p><strong>Current Projects:</strong> Algoverse (AI Research) + Congero Technology Group (Financial Analyst)</p>
+                        <p><strong>Current Role:</strong> Data Scientist Intern at IDX Exchange</p>
+                        <p><strong>Previous Experience:</strong> AI Research at Algoverse + Financial Analyst at Congero Technology Group</p>
                         
                         <p><strong>Achievements:</strong><br>
                         • 90% CNN diagnostic accuracy<br>
@@ -878,7 +884,7 @@
                     <!-- Community Contributions Section -->
                     <div class="contributions-section">
                         <h3>Community Contributions</h3>
-                        <p style="text-align: center; color: #5a6783; margin-bottom: 32px;">Share interesting articles and get my analytical perspective</p>
+                        <p style="text-align: center; color: #ffffff; margin-bottom: 32px;">Share interesting articles and get my analytical perspective</p>
                         
                         <div class="article-form">
                             <h3>Submit Article for Analysis</h3>
@@ -925,11 +931,12 @@
                     <p>Download my complete resume to explore my experience, education, and achievements in data analytics and business intelligence.</p>
                     
                     <div style="margin: 48px 0;">
-                        <h3 style="color: #a3a9b8; font-size: 24px; margin-bottom: 24px;">Current Experience Stack:</h3>
-                        <ul style="text-align: left; max-width: 600px; margin: 16px auto; color: #f1f1f1; font-size: 16px; line-height: 1.8;">
-                            <li><strong style="color: #e67f83;">AI Researcher</strong> - Algoverse</li>
-                            <li><strong style="color: #e67f83;">Financial Analyst Intern</strong> - Congero Technology Group</li>
-                            <li><strong style="color: #e67f83;">Tech Production Intern</strong> - Kigumi Group</li>
+                        <h3 style="color: #ffffff; font-size: 24px; margin-bottom: 24px;">Experience & Career Progression:</h3>
+                        <ul style="text-align: left; max-width: 600px; margin: 16px auto; color: #ffffff; font-size: 16px; line-height: 1.8;">
+                            <li><strong style="color: #ffffff;">Data Scientist Intern</strong> - IDX Exchange (Current)</li>
+                            <li><strong style="color: #ffffff;">Financial Analyst Intern</strong> - Congero Technology Group </li>
+                            <li><strong style="color: #ffffff;">AI Researcher Fellow </strong> - Algoverse</li>
+                            <li><strong style="color: #ffffff;">Tech Production Management Intern</strong> - The Kigumi Group</li>
                         </ul>
                     </div>
                     
@@ -949,7 +956,7 @@
         <div class="container">
             <p>&copy; 2025 Hanh Le. All rights reserved.</p>
             <p>"Turning data into decisions, insights into impact"</p>
-            <p style="color: #e67f83; margin-top: 16px;">Built with passion for analytics</p>
+            <p style="color: #ffffff; margin-top: 16px;">Built with passion for analytics</p>
         </div>
     </footer>
 
@@ -987,10 +994,10 @@
         document.addEventListener('DOMContentLoaded', function() {
             const typeElement = document.getElementById('typewriter');
             const texts = [
-                'AI Researcher at Algoverse - Financial Analyst at Congero',
-                'Junior at UMass Boston - Business Analytics', 
-                'Tech Production Intern at Kigumi Group',
-                'Data-Driven Decision Maker'
+                'Data Scientist Intern at IDX Exchange - Current Position',
+                'Previously: Financial Analyst at Congero Technology Group', 
+                'AI Researcher at Algoverse - Ongoing',
+                'Junior at UMass Boston - Business Analytics'
             ];
             let textIndex = 0;
             
