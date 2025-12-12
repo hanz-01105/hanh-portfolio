@@ -1,1074 +1,822 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hanh Le - Data & Business Analytics Professional</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-blue: #80b0e2;
-            --secondary-blue: #c2d7f1;
-            --white: #ffffff;
-            --light-green: #d1deb7;
-            --primary-green: #a2be71;
-            --dark-text: #2c3e50;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-            font-weight: 400;
-            line-height: 1.6;
-            color: var(--white);
-            background: var(--primary-green);
-            min-height: 100vh;
-        }
-
-        /* Elegant animated background */
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(
-                135deg, 
-                var(--primary-green) 0%,
-                var(--light-green) 25%,
-                var(--secondary-blue) 50%,
-                var(--primary-blue) 75%,
-                var(--white) 100%
-            );
-        }
-
-        .bg-animation::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="30" cy="40" r="2" fill="%23ffffff" opacity="0.3"/><circle cx="160" cy="80" r="3" fill="%23ffffff" opacity="0.2"/><circle cx="80" cy="120" r="1.5" fill="%23ffffff" opacity="0.4"/><circle cx="140" cy="160" r="2.5" fill="%23ffffff" opacity="0.25"/></svg>') repeat;
-            animation: floatingElements 30s infinite linear;
-        }
-
-        @keyframes floatingElements {
-            0% { transform: translateX(0px) translateY(0px); }
-            33% { transform: translateX(-15px) translateY(-8px); }
-            66% { transform: translateX(15px) translateY(8px); }
-            100% { transform: translateX(0px) translateY(0px); }
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Header - Green style */
-        header {
-            background: rgba(162, 190, 113, 0.95);
-            backdrop-filter: blur(20px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 2px solid var(--white);
-            box-shadow: 0 4px 20px rgba(162, 190, 113, 0.3);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 24px;
-        }
-
-        .logo {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--white);
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 24px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--white);
-            font-weight: 500;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-        }
-
-        .nav-links a:hover {
-            color: var(--white);
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 120px 0 80px;
-            text-align: center;
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-blue) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(162, 190, 113, 0.9) 0%, rgba(128, 176, 226, 0.8) 100%);
-            z-index: 1;
-        }
-
-        .hero::after {
-            content: 'import pandas as pd\nimport numpy as np\nfrom sklearn.model_selection import train_test_split\nfrom tensorflow import keras\n\ndef analyze_market_data(data):\n    # Data preprocessing\n    cleaned_data = data.dropna()\n    features = cleaned_data[["price", "volume", "sentiment"]]\n    \n    # Machine learning pipeline\n    X_train, X_test, y_train, y_test = train_test_split(features, target)\n    \n    model = keras.Sequential([\n        keras.layers.Dense(128, activation="relu"),\n        keras.layers.Dropout(0.3),\n        keras.layers.Dense(64, activation="relu"),\n        keras.layers.Dense(1, activation="sigmoid")\n    ])\n    \n    model.compile(optimizer="adam", loss="binary_crossentropy")\n    history = model.fit(X_train, y_train, epochs=100)\n    \n    predictions = model.predict(X_test)\n    return predictions';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 200%;
-            height: 200%;
-            font-family: 'Courier New', monospace;
-            font-size: 11px;
-            line-height: 1.4;
-            color: var(--white);
-            opacity: 0.1;
-            white-space: pre;
-            pointer-events: none;
-            animation: codeScroll 120s linear infinite;
-            z-index: 2;
-        }
-
-        @keyframes codeScroll {
-            0% { transform: translate(-10%, -10%) rotate(-15deg); }
-            100% { transform: translate(-60%, -60%) rotate(-15deg); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 3;
-        }
-
-        .hero-content h1 {
-            font-size: 48px;
-            margin-bottom: 16px;
-            color: var(--white);
-            font-weight: 600;
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-            letter-spacing: 3px;
-        }
-
-        .hero-content h2 {
-            font-size: 24px;
-            margin-bottom: 24px;
-            color: var(--white);
-            font-weight: 400;
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-        }
-
-        .typing-text {
-            font-size: 16px;
-            color: var(--white);
-            margin-bottom: 32px;
-            min-height: 24px;
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-        }
-
-        .motto {
-            font-size: 20px;
-            font-style: italic;
-            margin: 32px 0;
-            padding: 24px 32px;
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid var(--white);
-            border-radius: 12px;
-            display: inline-block;
-            color: var(--white);
-            font-weight: 500;
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-            backdrop-filter: blur(10px);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-top: 32px;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            padding: 12px 24px;
-            background: rgba(255, 255, 255, 0.2);
-            color: var(--white);
-            text-decoration: none;
-            border: 2px solid var(--white);
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            font-size: 14px;
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-            backdrop-filter: blur(10px);
-        }
-
-        .social-links a:hover {
-            background: rgba(255, 255, 255, 0.4);
-            color: var(--white);
-            border-color: var(--white);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
-        }
-
-        .social-links i {
-            margin-right: 8px;
-        }
-
-        /* Main Content */
-        section {
-            padding: 80px 0;
-            position: relative;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 48px;
-            color: var(--white);
-            font-weight: 600;
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-        }
-
-        /* About Section */
-        .about {
-            background: linear-gradient(135deg, var(--light-green) 0%, var(--secondary-blue) 100%);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: start;
-        }
-
-        .about-text {
-            font-size: 16px;
-            line-height: 1.6;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 32px;
-            border-radius: 12px;
-            border: 2px solid var(--white);
-            color: var(--dark-text);
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
-        }
-
-        .about-text p {
-            margin-bottom: 16px;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 24px;
-        }
-
-        .skill-category {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 24px;
-            border-radius: 12px;
-            border: 2px solid var(--white);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
-        }
-
-        .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(255, 255, 255, 0.2);
-            border-color: var(--white);
-        }
-
-        .skill-category h4 {
-            color: var(--dark-text);
-            margin-bottom: 16px;
-            font-size: 16px;
-            font-weight: 600;
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .skill-tag {
-            background: var(--primary-green);
-            color: var(--white);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-            border: 1px solid var(--white);
-        }
-
-        .skill-tag:hover {
-            background: var(--primary-blue);
-            color: var(--white);
-            transform: scale(1.05);
-        }
-
-        /* Projects Section */
-        .projects {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-green) 100%);
-        }
-
-        .projects .section-title {
-            color: var(--white);
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 32px;
-        }
-
-        .project-card {
-            background: rgba(255, 255, 255, 0.95);
-            border: 2px solid var(--white);
-            border-radius: 16px;
-            padding: 32px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(15px);
-            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2);
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 16px 48px rgba(255, 255, 255, 0.3);
-            border-color: var(--white);
-        }
-
-        .project-card h3 {
-            color: var(--dark-text);
-            margin-bottom: 16px;
-            font-size: 20px;
-            font-weight: 600;
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-        }
-
-        .project-card p {
-            color: var(--dark-text);
-            margin-bottom: 16px;
-            line-height: 1.5;
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-        }
-
-        .project-links {
-            margin-top: 24px;
-        }
-
-        .project-links a {
-            display: inline-block;
-            padding: 10px 20px;
-            background: var(--primary-green);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 8px;
-            margin-right: 8px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            font-size: 14px;
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-            border: 2px solid var(--white);
-        }
-
-        .project-links a:hover {
-            background: var(--primary-blue);
-            color: var(--white);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
-        }
-
-        /* Articles Section */
-        .articles {
-            background: linear-gradient(135deg, var(--light-green) 0%, var(--secondary-blue) 100%);
-        }
-
-        .articles-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .my-articles,
-        .publish-section {
-            margin-bottom: 64px;
-        }
-
-        .my-articles h3,
-        .publish-section h3 {
-            color: var(--white);
-            font-size: 24px;
-            margin-bottom: 32px;
-            text-align: center;
-            font-weight: 600;
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-        }
-
-        .article-form {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 32px;
-            border-radius: 16px;
-            border: 2px solid var(--white);
-            margin-bottom: 48px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
-        }
-
-        .contributions-section h3 {
-            color: var(--white);
-            font-size: 20px;
-            margin-bottom: 32px;
-            text-align: center;
-            font-weight: 600;
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-        }
-
-        .form-group {
-            margin-bottom: 24px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--dark-text);
-            font-size: 14px;
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid var(--white);
-            border-radius: 8px;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.9);
-            color: var(--dark-text);
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--white);
-            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
-            background: white;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .btn {
-            background: var(--primary-green);
-            color: var(--white);
-            padding: 12px 24px;
-            border: 2px solid var(--white);
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-        }
-
-        .btn:hover {
-            background: var(--primary-blue);
-            color: var(--white);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
-        }
-
-        .articles-list {
-            display: grid;
-            gap: 24px;
-        }
-
-        .article-item {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 32px;
-            border-radius: 16px;
-            border: 2px solid var(--white);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
-        }
-
-        .article-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2);
-            border-color: var(--white);
-        }
-
-        .article-item h3 {
-            color: var(--dark-text);
-            margin-bottom: 8px;
-            font-size: 18px;
-            font-weight: 600;
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-        }
-
-        .article-meta {
-            color: var(--dark-text);
-            font-size: 14px;
-            margin-bottom: 16px;
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-        }
-
-        .article-source {
-            display: inline-block;
-            background: var(--primary-green);
-            color: var(--white);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            margin-bottom: 16px;
-            font-weight: 500;
-            border: 1px solid var(--white);
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-        }
-
-        .article-item p {
-            color: var(--dark-text);
-            line-height: 1.5;
-            margin-bottom: 12px;
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-        }
-
-        /* Resume Section */
-        .resume-section {
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-blue) 100%);
-        }
-
-        .resume-section .section-title {
-            color: var(--white);
-        }
-
-        .resume-content {
-            text-align: center;
-        }
-
-        .resume-content p {
-            color: var(--white);
-            font-size: 16px;
-            margin-bottom: 24px;
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-        }
-
-        .resume-content ul {
-            color: var(--white);
-            font-size: 16px;
-        }
-
-        .resume-download {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            color: var(--white);
-            padding: 16px 32px;
-            text-decoration: none;
-            border-radius: 12px;
-            font-size: 16px;
-            margin: 16px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-            border: 2px solid var(--white);
-            backdrop-filter: blur(10px);
-        }
-
-        .resume-download:hover {
-            background: rgba(255, 255, 255, 0.3);
-            color: var(--white);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary-green);
-            color: var(--white);
-            text-align: center;
-            padding: 48px 0;
-            border-top: 3px solid var(--white);
-            font-family: 'Atkinson Hyperlegible', 'Arial', sans-serif;
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--light-green);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--white);
-            border-radius: 6px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-green);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-content h1 {
-                font-size: 32px;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .social-links {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hanh Le | Data & Business Analytics</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* GitHub Dark */
+      --bg:#0d1117;
+      --panel:#161b22;
+      --text:#c9d1d9;
+      --muted:#8b949e;
+      --border:#30363d;
+      --accent:#58a6ff;
+      --accent2:#1f6feb;
+      --green:#3fb950;
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --radius: 14px;
+
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: 'Atkinson Hyperlegible', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family: var(--sans);
+      line-height:1.6;
+      color:var(--text);
+      background: var(--bg);
+      min-height:100vh;
+    }
+
+    /* subtle GitHub-ish background */
+    .bg-animation{
+      position:fixed;inset:0;z-index:-1;
+      background:
+        radial-gradient(circle at 18% 20%, rgba(88,166,255,0.10), transparent 40%),
+        radial-gradient(circle at 82% 25%, rgba(63,185,80,0.07), transparent 40%),
+        repeating-linear-gradient(0deg, rgba(48,54,61,0.12), rgba(48,54,61,0.12) 1px, transparent 1px, transparent 32px),
+        repeating-linear-gradient(90deg, rgba(48,54,61,0.12), rgba(48,54,61,0.12) 1px, transparent 1px, transparent 32px);
+    }
+
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+    /* Header */
+    header{
+      position:fixed;top:0;left:0;right:0;z-index:1000;
+      background: rgba(13,17,23,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding: 14px 0;
+    }
+    .logo{
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 62vw;
+    }
+    .nav-links{display:flex;gap:10px;list-style:none}
+    .nav-links a{
+      text-decoration:none;
+      color:var(--text);
+      font-size:13px;
+      padding:8px 10px;
+      border:1px solid transparent;
+      border-radius:10px;
+      transition:.2s ease;
+    }
+    .nav-links a:hover{
+      border-color:var(--border);
+      background: rgba(22,27,34,0.9);
+      color: var(--accent);
+    }
+
+    /* Hero */
+    .hero{
+      padding: 108px 0 44px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(22,27,34,0.65), rgba(13,17,23,0));
+    }
+    .hero-content{
+      max-width: 920px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .hero h1{
+      font-family: var(--mono);
+      font-size: 44px;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .hero h2{
+      font-size: 16px;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+    .typing-text{
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      min-height: 18px;
+    }
+
+    .pill-row{
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top: 14px;
+    }
+    .pill{
+      font-family: var(--mono);
+      font-size: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(22,27,34,0.85);
+      color: var(--text);
+    }
+    .pill strong{color:#fff;font-weight:700}
+
+    .social-links{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:10px;
+      margin-top: 18px;
+    }
+    .social-links a{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 14px;
+      border:1px solid var(--border);
+      background: rgba(22,27,34,0.9);
+      color: var(--text);
+      text-decoration:none;
+      border-radius:999px;
+      font-size:13px;
+      transition:.2s ease;
+    }
+    .social-links a:hover{
+      border-color: rgba(88,166,255,0.6);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    /* Sections */
+    section{padding: 56px 0}
+    .section-title{
+      font-family: var(--mono);
+      font-size: 16px;
+      margin-bottom: 14px;
+      color: #fff;
+      letter-spacing: 0.2px;
+    }
+    .section-subtitle{
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 14px;
+      max-width: 900px;
+    }
+
+    /* Panel */
+    .panel{
+      border: 1px solid var(--border);
+      background: rgba(22,27,34,0.86);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .panel-inner{padding: 20px}
+
+    /* About layout */
+    .about-content{
+      display:grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 14px;
+      align-items:start;
+    }
+    .about-text{
+      border:1px solid var(--border);
+      background: rgba(22,27,34,0.86);
+      border-radius: var(--radius);
+      padding: 20px;
+      color: var(--text);
+    }
+    .about-text p{margin-bottom: 10px}
+    .about-text strong{color:#fff}
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 12px;
+    }
+    .skill-category{
+      border:1px solid var(--border);
+      background: rgba(22,27,34,0.86);
+      border-radius: var(--radius);
+      padding: 16px;
+      transition: .2s ease;
+    }
+    .skill-category:hover{
+      border-color: rgba(88,166,255,0.45);
+      transform: translateY(-2px);
+    }
+    .skill-category h4{
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .skill-tags{display:flex;flex-wrap:wrap;gap:8px}
+    .skill-tag{
+      font-family: var(--mono);
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(13,17,23,0.7);
+      color: var(--text);
+    }
+
+    /* Experience (README-style list) */
+    .exp-list{display:grid;gap:12px}
+    .exp-item{
+      border:1px solid var(--border);
+      background: rgba(22,27,34,0.86);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .exp-top{
+      display:flex;flex-wrap:wrap;
+      align-items:center;justify-content:space-between;
+      gap:10px;margin-bottom:8px;
+    }
+    .exp-role{
+      font-family: var(--mono);
+      color:#fff;
+      font-size: 13px;
+    }
+    .exp-metrics{
+      font-family: var(--mono);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .exp-desc{color:var(--text);font-size:14px}
+    .exp-badges{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
+    .badge{
+      font-family: var(--mono);
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(13,17,23,0.65);
+      color: var(--muted);
+    }
+    .badge.ok{color:#d2fedb;border-color: rgba(63,185,80,0.55); background: rgba(63,185,80,0.10)}
+    .badge.blue{color:#cfe6ff;border-color: rgba(88,166,255,0.55); background: rgba(88,166,255,0.10)}
+
+    /* Projects */
+    .projects-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 14px;
+    }
+    .project-card{
+      border:1px solid var(--border);
+      background: rgba(22,27,34,0.86);
+      border-radius: var(--radius);
+      padding: 18px;
+      transition: .2s ease;
+    }
+    .project-card:hover{
+      border-color: rgba(63,185,80,0.55);
+      transform: translateY(-2px);
+    }
+    .project-card h3{
+      font-family: var(--mono);
+      font-size: 14px;
+      margin-bottom: 10px;
+      color:#fff;
+    }
+    .project-card p{color:var(--text);font-size:14px;margin-bottom:10px}
+    .project-card strong{color:var(--muted)}
+    .project-links a{
+      display:inline-flex;align-items:center;gap:8px;
+      padding: 9px 12px;
+      border:1px solid var(--border);
+      background: rgba(13,17,23,0.65);
+      color: var(--accent);
+      text-decoration:none;
+      border-radius: 10px;
+      font-size: 13px;
+      transition:.2s ease;
+      margin-right: 8px;
+      margin-top: 6px;
+    }
+    .project-links a:hover{
+      border-color: rgba(88,166,255,0.6);
+      background: rgba(13,17,23,0.9);
+    }
+
+    /* Articles */
+    .articles-container{max-width: 980px;margin:0 auto}
+    .articles-list{display:grid;gap:12px}
+    .article-form,.article-item{
+      border:1px solid var(--border);
+      background: rgba(22,27,34,0.86);
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+    .article-item h3{
+      color:#fff;
+      font-family: var(--mono);
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .article-meta{
+      color: var(--muted);
+      font-size: 12px;
+      font-family: var(--mono);
+      margin-bottom: 10px;
+    }
+    .article-source{
+      display:inline-block;
+      border:1px solid var(--border);
+      background: rgba(13,17,23,0.65);
+      color: var(--accent);
+      padding:6px 10px;
+      border-radius: 999px;
+      text-decoration:none;
+      font-size: 12px;
+      font-family: var(--mono);
+      margin-bottom: 10px;
+    }
+    .article-item p{font-size:14px;color:var(--text);margin-bottom:10px}
+    .article-item strong{color:#fff}
+
+    .form-group{margin-bottom: 14px}
+    .form-group label{
+      display:block;
+      color: var(--muted);
+      font-size: 12px;
+      font-family: var(--mono);
+      margin-bottom: 6px;
+    }
+    .form-group input,.form-group textarea{
+      width:100%;
+      border:1px solid var(--border);
+      background: rgba(13,17,23,0.7);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 12px;
+      outline:none;
+      font-size: 14px;
+      font-family: var(--sans);
+    }
+    .form-group input:focus,.form-group textarea:focus{
+      border-color: rgba(88,166,255,0.85);
+      box-shadow: 0 0 0 3px rgba(88,166,255,0.15);
+    }
+    .btn{
+      border:1px solid rgba(63,185,80,0.60);
+      background: rgba(63,185,80,0.10);
+      color:#d2fedb;
+      border-radius: 10px;
+      padding: 10px 14px;
+      cursor:pointer;
+      font-size: 13px;
+      font-family: var(--mono);
+      transition:.2s ease;
+    }
+    .btn:hover{background: rgba(63,185,80,0.18); transform: translateY(-1px)}
+
+    /* Resume */
+    .resume-content{ text-align:left }
+    .resume-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .resume-download{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 14px;
+      border:1px solid var(--border);
+      background: rgba(22,27,34,0.86);
+      color: var(--text);
+      border-radius: 12px;
+      text-decoration:none;
+      font-size: 13px;
+      transition:.2s ease;
+      font-family: var(--mono);
+    }
+    .resume-download:hover{
+      border-color: rgba(88,166,255,0.6);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    footer{
+      border-top:1px solid var(--border);
+      background: rgba(13,17,23,0.92);
+      padding: 28px 0;
+      color: var(--muted);
+      text-align:center;
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .about-content{grid-template-columns: 1fr}
+      .skills-grid{grid-template-columns: 1fr}
+    }
+    @media (max-width: 768px){
+      .nav-links{display:none}
+      .hero h1{font-size: 32px}
+    }
+  </style>
 </head>
+
 <body>
-    <div class="bg-animation"></div>
+  <div class="bg-animation"></div>
 
-    <header>
-        <nav class="container">
-            <div class="logo">Hi World, let's get to know each other!</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#articles">Insights</a></li>
-                <li><a href="#resume">Resume</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav class="container">
+      <div class="logo">$ whoami → Hanh Le • Data & Business Analytics</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">README</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Repos</a></li>
+        <li><a href="#articles">Insights</a></li>
+        <li><a href="#resume">Resume</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>HANH LE</h1>
-                <h2>Data & Business Analytics Professional</h2>
-                <div class="typing-text">
-                    <span id="typewriter">Data Scientist Intern @ IDX Exchange | AI Researcher @ Algoverse</span>
-                </div>
-                <div class="motto">
-                    "To every problem, there is always a solution"
-                </div>
-                
-                <div class="social-links">
-                    <a href="#" onclick="showEmail(); return false;">
-                        <i class="fas fa-envelope"></i> Email
-                    </a>
-                    <a href="https://linkedin.com/in/hanhle01" target="_blank">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/hanz-01105" target="_blank">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </div>
-            </div>
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>HANH LE</h1>
+        <h2>Data & Business Analytics • Turning data into decisions</h2>
+
+        <div class="typing-text">
+          <span id="typewriter">Data Scientist Intern @ IDX Exchange | AI Researcher @ Algoverse</span>
         </div>
+
+        <div class="pill-row">
+          <div class="pill"><strong>Focus:</strong> Data + Finance + ML</div>
+          <div class="pill"><strong>Tools:</strong> Python • SQL • Power BI</div>
+          <div class="pill"><strong>Goal:</strong> Data/Financial Analyst Internships</div>
+        </div>
+
+        <div class="social-links">
+          <a href="#" onclick="showEmail(); return false;"><i class="fas fa-envelope"></i>Email</a>
+          <a href="https://linkedin.com/in/hanhle01" target="_blank" rel="noreferrer"><i class="fab fa-linkedin"></i>LinkedIn</a>
+          <a href="https://github.com/hanz-01105" target="_blank" rel="noreferrer"><i class="fab fa-github"></i>GitHub</a>
+          <a href="https://lighthearted-kataifi-13b5ad.netlify.app/" target="_blank" rel="noreferrer"><i class="fas fa-globe"></i>Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- README / About -->
+    <section id="about">
+      <div class="container">
+        <div class="section-title">README.md</div>
+        <div class="section-subtitle">
+          Data-driven Business Analytics student with experience across AI research, financial modeling, and tech consulting.
+          I like building clear dashboards, solid models, and decision-ready insights.
+        </div>
+
+        <div class="about-content">
+          <div class="about-text">
+            <p><strong>Quick summary</strong></p>
+            <p>Currently working across analytics + modeling projects with measurable impact (process speedups, KPI visibility, and model performance improvements).</p>
+            <p><strong>What I care about</strong></p>
+            <p>Turning messy data into simple signals, and turning signals into decisions people can act on.</p>
+            <p><strong>Currently learning</strong></p>
+            <p>Advanced SQL, stronger modeling discipline, and CFA Level 1 foundations.</p>
+          </div>
+
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h4>def programming():</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">C++</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h4>class visualization:</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">Power BI</span>
+                <span class="skill-tag">Tableau</span>
+                <span class="skill-tag">Excel</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h4>import machine_learning:</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">Pandas</span>
+                <span class="skill-tag">Scikit-learn</span>
+                <span class="skill-tag">TensorFlow</span>
+                <span class="skill-tag">Jupyter</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h4>sudo cloud_tools:</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">GCP</span>
+                <span class="skill-tag">Git</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <main>
-        <section id="about" class="about">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p><strong>Data-driven Business Analytics student</strong></p>
-                        <p><strong>Experience:</strong> AI research, financial modeling, tech consulting</p>
-                        
-                        <p><strong>Current Role:</strong> Data Scientist Intern at IDX Exchange</p>
-                        <p><strong>Previous Experience:</strong> AI Research at Algoverse + Financial Analyst at Congero Technology Group</p>
-                        
-                        <p><strong>Achievements:</strong><br>
-                        • 90% CNN diagnostic accuracy<br>
-                        • 25% process optimization<br>
-                        • 30% KPI visibility improvements</p>
-                        
-                        <p><strong>Mission:</strong> Leveraging analytics to solve complex business problems and drive strategic decision-making.</p>
-                        
-                        <p><strong>Current Goal:</strong> Securing Data/Financial Analytics internships while pursuing CFA Level 1 certification.</p>
-                    </div>
-                    
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h4>def programming():</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">SQL</span>
-                                <span class="skill-tag">Java</span>
-                                <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">C++</span>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-category">
-                            <h4>class Visualization:</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Power BI</span>
-                                <span class="skill-tag">Tableau</span>
-                                <span class="skill-tag">Excel</span>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-category">
-                            <h4>import machine_learning:</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Pandas</span>
-                                <span class="skill-tag">Scikit-learn</span>
-                                <span class="skill-tag">TensorFlow</span>
-                                <span class="skill-tag">Jupyter</span>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-category">
-                            <h4>sudo cloud_tools:</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">AWS</span>
-                                <span class="skill-tag">GCP</span>
-                                <span class="skill-tag">Git</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Experience (GitHub-like cards) -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-title">Experience</div>
+        <div class="section-subtitle">Highlights with outcomes and tools used.</div>
+
+        <div class="exp-list">
+          <div class="exp-item">
+            <div class="exp-top">
+              <div class="exp-role">Data Analyst Intern • Nunchi Health</div>
+              <div class="exp-metrics">25% faster reimbursements • 30% transparency • 40% engagement</div>
             </div>
-        </section>
-
-        <section id="projects" class="projects">
-            <div class="container">
-                <h2 class="section-title">Featured Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <h3>$ ./medicare_analysis.py</h3>
-                        <p>Comprehensive analysis of Medicare data to identify healthcare trends and cost optimization opportunities. Advanced data analysis + healthcare domain expertise.</p>
-                        <p><strong>Stack:</strong> Python | Pandas | SQL | Data Visualization</p>
-                        <div class="project-links">
-                            <a href="https://github.com/hanz-01105/Medicare-Inpatient-Hospital" target="_blank">View Code</a>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card">
-                        <h3>$ ./stock_prediction.py</h3>
-                        <p>Machine learning models for financial market analysis and stock price direction prediction. Open source collaboration welcome!</p>
-                        <p><strong>Stack:</strong> Python | ML | Financial APIs | TensorFlow</p>
-                        <div class="project-links">
-                            <a href="https://github.com/hanz-01105/Stock-Price-Direction" target="_blank">View Code</a>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card">
-                        <h3>$ ./bank_loan_analysis.py</h3>
-                        <p>Comprehensive bank loan default prediction using machine learning. Risk assessment models with feature engineering and ensemble methods for financial decision-making.</p>
-                        <p><strong>Stack:</strong> Python | Scikit-learn | Pandas | Data Visualization | Risk Modeling</p>
-                        <div class="project-links">
-                            <a href="https://github.com/hanz-01105/Bank-loan-analysis" target="_blank">View Code</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="exp-desc">Improved reimbursement workflows and reporting to support leadership visibility and faster decisions.</div>
+            <div class="exp-badges">
+              <span class="badge ok">Dashboards</span>
+              <span class="badge">Reporting</span>
+              <span class="badge">Ops analytics</span>
             </div>
-        </section>
+          </div>
 
-        <section id="articles" class="articles">
-            <div class="container">
-                <h2 class="section-title">Market Insights</h2>
-                <div class="articles-container">
-                    
-                    <!-- My Articles Section -->
-                    <div class="my-articles">
-                        <h3>My Insights</h3>
-                        <div class="articles-list" id="myArticlesList">
-                            <div class="article-item">
-                                <h3>NVIDIA's China Strategy: Geopolitical Risk vs Market Opportunity</h3>
-                                <div class="article-meta">Published: August 17, 2025 | Author: Hanh Le</div>
-                                <a href="https://www.wsj.com/tech/nvidia-wins-ok-to-resume-sales-of-ai-chip-to-china-after-ceo-meets-trump-68f55d71?mod=series_uschina" target="_blank" class="article-source">Wall Street Journal Analysis</a>
-                                <p><strong>Market Signal:</strong> NVIDIA receives Trump administration approval to resume H20 AI chip sales to China after CEO meets with President...</p>
-                                <p><strong>My Analysis:</strong> This is strategically questionable. H20 chips are performance-limited versions designed for export compliance, yet China has developed domestic alternatives through Huawei. The geopolitical risk-reward calculation appears unfavorable - NVIDIA must compete against state-backed Chinese AI makers while navigating regulatory uncertainty. Previous analysis showed $2.5B in blocked shipments and $8B projected losses. Market dominance in China is diminishing as local competitors gain ground. Better focus on diversified geographic revenue streams in neutral markets like Singapore.</p>
-                            </div>
-
-                            <div class="article-item">
-                                <h3>Retail Tariff Impact: Swedish Brand Exits US Market</h3>
-                                <div class="article-meta">Published: August 15, 2025 | Author: Hanh Le</div>
-                                <a href="https://www.wsj.com/business/retail/polarn-o-pyret-swedish-clothing-us-tariffs-55e7a2cd?mod=business_feat2_retail_pos5" target="_blank" class="article-source">Wall Street Journal Analysis</a>
-                                <p><strong>Market Signal:</strong> Polarn O. Pyret (Swedish children's outerwear) exits US market by year-end due to tariff costs adding hundreds of thousands in inventory expenses...</p>
-                                <p><strong>My Analysis:</strong> This exemplifies tariff elasticity destroying market viability for mid-tier international brands. Currency depreciation + tariff duties create compound cost pressure that pricing power cannot absorb. Retail sector analysis shows similar patterns across European apparel imports. Investment thesis: Short international retail ETFs with heavy US exposure, long domestic manufacturing plays. The broader trend suggests continued market share consolidation favoring domestic producers and large-scale importers with tariff absorption capacity.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Publish New Insight Section -->
-                    <div class="publish-section">
-                        <h3>Publish New Insight</h3>
-                        <div class="article-form">
-                            <p>Share your latest market analysis and insights</p>
-                            
-                            <form id="myArticleForm">
-                                <div class="form-group">
-                                    <label for="myArticleTitle">Analysis Title</label>
-                                    <input type="text" id="myArticleTitle" placeholder="Fed Policy Impact on Tech Valuations" required>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="myArticleSource">Data Source</label>
-                                    <input type="text" id="myArticleSource" placeholder="Wall Street Journal, Bloomberg, Reuters..." required>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="myArticleUrl">Source URL (optional)</label>
-                                    <input type="url" id="myArticleUrl" placeholder="https://...">
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="myArticleSummary">Market Signal/Summary</label>
-                                    <textarea id="myArticleSummary" placeholder="Key market development or data point..." required></textarea>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="myPersonalAnalysis">Your Analysis & Insights</label>
-                                    <textarea id="myPersonalAnalysis" placeholder="Your data-driven analysis, models, predictions..." required></textarea>
-                                </div>
-                                
-                                <button type="submit" class="btn">Publish Insight</button>
-                            </form>
-                        </div>
-                    </div>
-
-                    <!-- Community Contributions Section -->
-                    <div class="contributions-section">
-                        <h3>Community Contributions</h3>
-                        <p style="text-align: center; color: #ffffff; margin-bottom: 32px;">Share interesting articles and get my analytical perspective</p>
-                        
-                        <div class="article-form">
-                            <h3>Submit Article for Analysis</h3>
-                            <p>Share articles from WSJ, Bloomberg, or other financial sources for analysis</p>
-                            
-                            <form id="contributionForm">
-                                <div class="form-group">
-                                    <label for="contribTitle">Article Title</label>
-                                    <input type="text" id="contribTitle" placeholder="Title of the article you want analyzed" required>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="contribSource">Source Publication</label>
-                                    <input type="text" id="contribSource" placeholder="Wall Street Journal, Bloomberg, Reuters..." required>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="contribUrl">Article URL</label>
-                                    <input type="url" id="contribUrl" placeholder="https://..." required>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="contribSummary">Brief Summary</label>
-                                    <textarea id="contribSummary" placeholder="What's the key point of this article?" required></textarea>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="contribQuestion">Specific Question (optional)</label>
-                                    <textarea id="contribQuestion" placeholder="Any specific aspect you'd like me to analyze?"></textarea>
-                                </div>
-                                
-                                <button type="submit" class="btn">Submit for Analysis</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+          <div class="exp-item">
+            <div class="exp-top">
+              <div class="exp-role">Data Scientist Intern • IDX Exchange</div>
+              <div class="exp-metrics">R² 0.86 • 60% automation • 20% faster investment decisions</div>
             </div>
-        </section>
-
-        <section id="resume" class="resume-section">
-            <div class="container">
-                <h2 class="section-title">Resume & Experience</h2>
-                <div class="resume-content">
-                    <p>Download my complete resume to explore my experience, education, and achievements in data analytics and business intelligence.</p>
-                    
-                    <div style="margin: 48px 0;">
-                        <h3 style="color: #ffffff; font-size: 24px; margin-bottom: 24px;">Experience & Career Progression:</h3>
-                        <ul style="text-align: left; max-width: 600px; margin: 16px auto; color: #ffffff; font-size: 16px; line-height: 1.8;">
-                            <li><strong style="color: #ffffff;">Data Scientist Intern</strong> - IDX Exchange</li>
-                            <li><strong style="color: #ffffff;">Financial Analyst Intern</strong> - Congero Technology Group</li>
-                            <li><strong style="color: #ffffff;">AI Researcher</strong> - Algoverse</li>
-                            <li><strong style="color: #ffffff;">Tech Production Intern</strong> - Kigumi Group</li>
-                        </ul>
-                    </div>
-                    
-                    <a href="#" class="resume-download" onclick="alert('Resume download will be available soon! Please contact for the latest version.')">
-                        <i class="fas fa-download"></i> Download Resume
-                    </a>
-                    
-                    <a href="https://github.com/hanz-01105" class="resume-download" target="_blank">
-                        <i class="fab fa-github"></i> View GitHub
-                    </a>
-                </div>
+            <div class="exp-desc">Built forecasting + feature engineering workflows to improve model performance and reduce manual work.</div>
+            <div class="exp-badges">
+              <span class="badge blue">Python</span>
+              <span class="badge blue">ML</span>
+              <span class="badge">Feature engineering</span>
             </div>
-        </section>
-    </main>
+          </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Hanh Le. All rights reserved.</p>
-            <p>"Turning data into decisions, insights into impact"</p>
-            <p style="color: #ffffff; margin-top: 16px;">Built with passion for analytics</p>
+          <div class="exp-item">
+            <div class="exp-top">
+              <div class="exp-role">AI Research Assistant • Stanford University (Dr. Benjamin Liu)</div>
+              <div class="exp-metrics">90% diagnostic accuracy • 35% error reduction • 40% faster pipelines</div>
+            </div>
+            <div class="exp-desc">Worked on CNN pipelines and performance improvements for diagnostic tasks and model reliability.</div>
+            <div class="exp-badges">
+              <span class="badge blue">TensorFlow</span>
+              <span class="badge">Pipelines</span>
+              <span class="badge">Evaluation</span>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-top">
+              <div class="exp-role">Financial Analyst Intern • Congero Technology Group</div>
+              <div class="exp-metrics">25% faster close • 18% forecast precision • 30% KPI visibility</div>
+            </div>
+            <div class="exp-desc">Supported forecasting and reporting improvements to increase clarity across finance operations.</div>
+            <div class="exp-badges">
+              <span class="badge">Financial modeling</span>
+              <span class="badge ok">KPI tracking</span>
+              <span class="badge">Process improvement</span>
+            </div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script>
-        // Email popup function
-        function showEmail() {
-            alert('📧 Email: katele2277@gmail.com\n\nClick OK to copy to clipboard!');
-            
-            // Try to copy to clipboard
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText('katele2277@gmail.com').then(function() {
-                    // Success - email copied
-                }, function() {
-                    // Fallback if clipboard API fails
-                    console.log('Clipboard API failed');
-                });
-            }
+    <!-- Projects -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-title">Repos</div>
+        <div class="section-subtitle">Featured projects with stack + links.</div>
+
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>$ ./medicare_inpatient_hospital</h3>
+            <p>Medicare inpatient analysis to identify trends and cost optimization opportunities.</p>
+            <p><strong>Stack:</strong> Python • Pandas • SQL • Visualization</p>
+            <div class="project-links">
+              <a href="https://github.com/hanz-01105/Medicare-Inpatient-Hospital" target="_blank" rel="noreferrer"><i class="fab fa-github"></i>View Code</a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h3>$ ./stock_price_direction</h3>
+            <p>ML models for stock direction prediction. Open to collaboration.</p>
+            <p><strong>Stack:</strong> Python • ML • Financial APIs</p>
+            <div class="project-links">
+              <a href="https://github.com/hanz-01105/Stock-Price-Direction" target="_blank" rel="noreferrer"><i class="fab fa-github"></i>View Code</a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h3>$ ./bank_loan_analysis</h3>
+            <p>Bank loan default prediction with modeling + feature engineering for risk decisions.</p>
+            <p><strong>Stack:</strong> Python • Scikit-learn • Risk modeling</p>
+            <div class="project-links">
+              <a href="https://github.com/hanz-01105/Bank-loan-analysis" target="_blank" rel="noreferrer"><i class="fab fa-github"></i>View Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Insights -->
+    <section id="articles">
+      <div class="container">
+        <div class="section-title">Insights</div>
+        <div class="section-subtitle">Your published notes + a small form to add more (kept from your original).</div>
+
+        <div class="articles-container">
+          <div class="articles-list" id="myArticlesList">
+            <div class="article-item">
+              <h3>NVIDIA's China Strategy: Geopolitical Risk vs Market Opportunity</h3>
+              <div class="article-meta">Published: August 17, 2025 | Author: Hanh Le</div>
+              <a href="https://www.wsj.com/tech/nvidia-wins-ok-to-resume-sales-of-ai-chip-to-china-after-ceo-meets-trump-68f55d71?mod=series_uschina"
+                 target="_blank" rel="noreferrer" class="article-source">Wall Street Journal</a>
+              <p><strong>Market Signal:</strong> NVIDIA receives approval to resume H20 AI chip sales to China after leadership engagement.</p>
+              <p><strong>My Analysis:</strong> Strategic risk-reward is tricky under regulatory uncertainty and rising domestic competition. Diversification matters.</p>
+            </div>
+
+            <div class="article-item">
+              <h3>Retail Tariff Impact: Swedish Brand Exits US Market</h3>
+              <div class="article-meta">Published: August 15, 2025 | Author: Hanh Le</div>
+              <a href="https://www.wsj.com/business/retail/polarn-o-pyret-swedish-clothing-us-tariffs-55e7a2cd?mod=business_feat2_retail_pos5"
+                 target="_blank" rel="noreferrer" class="article-source">Wall Street Journal</a>
+              <p><strong>Market Signal:</strong> Polarn O. Pyret exits US market due to tariff-driven cost pressure.</p>
+              <p><strong>My Analysis:</strong> Mid-tier brands often lack pricing power for compounding tariff + FX pressure. Watch consolidation dynamics.</p>
+            </div>
+          </div>
+
+          <div style="height:14px"></div>
+
+          <div class="article-form">
+            <div class="section-title" style="margin-bottom:8px;">Publish New Insight</div>
+            <div class="section-subtitle" style="margin-bottom:12px;">Add a market note and your take.</div>
+
+            <form id="myArticleForm">
+              <div class="form-group">
+                <label for="myArticleTitle">Analysis Title</label>
+                <input type="text" id="myArticleTitle" placeholder="Fed Policy Impact on Tech Valuations" required>
+              </div>
+
+              <div class="form-group">
+                <label for="myArticleSource">Source</label>
+                <input type="text" id="myArticleSource" placeholder="WSJ, Bloomberg, Reuters..." required>
+              </div>
+
+              <div class="form-group">
+                <label for="myArticleUrl">Source URL (optional)</label>
+                <input type="url" id="myArticleUrl" placeholder="https://...">
+              </div>
+
+              <div class="form-group">
+                <label for="myArticleSummary">Market Signal / Summary</label>
+                <textarea id="myArticleSummary" placeholder="Key data point or headline..." required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="myPersonalAnalysis">Your Analysis</label>
+                <textarea id="myPersonalAnalysis" placeholder="Your take, implications, what you’d watch next..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn">Publish</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume">
+      <div class="container">
+        <div class="section-title">Resume</div>
+        <div class="section-subtitle">Add a PDF link later or keep the “request” flow for now.</div>
+
+        <div class="panel">
+          <div class="panel-inner resume-content">
+            <p style="color:var(--muted); margin-bottom:12px;">
+              If you want, I can also help you generate a one-page resume PDF + add a direct download link here.
+            </p>
+
+            <div class="resume-actions">
+              <a href="#" class="resume-download" onclick="alert('Resume download coming soon! Email me for the latest version.'); return false;">
+                <i class="fas fa-download"></i> Download Resume
+              </a>
+
+              <a href="https://github.com/hanz-01105" class="resume-download" target="_blank" rel="noreferrer">
+                <i class="fab fa-github"></i> View GitHub
+              </a>
+
+              <a href="https://linkedin.com/in/hanhle01" class="resume-download" target="_blank" rel="noreferrer">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© 2025 Hanh Le</div>
+      <div>“Turning data into decisions, insights into impact”</div>
+    </div>
+  </footer>
+
+  <script>
+    // Email popup function
+    function showEmail() {
+      alert('📧 Email: katele2277@gmail.com\\n\\nTip: You can copy it from here.');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText('katele2277@gmail.com').catch(() => {});
+      }
+    }
+
+    // Typewriter effect
+    function typeWriter(text, element, speed = 75) {
+      let i = 0;
+      element.innerHTML = '';
+      function type() {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
         }
+      }
+      type();
+    }
 
-        // Typewriter effect
-        function typeWriter(text, element, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        }
+    document.addEventListener('DOMContentLoaded', function() {
+      const typeElement = document.getElementById('typewriter');
+      const texts = [
+        'Data Scientist Intern @ IDX Exchange',
+        'Financial Analyst Intern @ Congero Technology Group',
+        'AI Research @ Algoverse / Stanford',
+        'Junior @ Boston University'
+      ];
+      let textIndex = 0;
 
-        // Initialize effects
-        document.addEventListener('DOMContentLoaded', function() {
-            const typeElement = document.getElementById('typewriter');
-            const texts = [
-                'Data Scientist Intern at IDX Exchange',
-                'Previously: Financial Analyst at Congero Technology Group', 
-                'AI Researcher at Algoverse',
-                'Junior at UMass Boston - Business Analytics'
-            ];
-            let textIndex = 0;
-            
-            function cycleText() {
-                typeWriter(texts[textIndex], typeElement, 80);
-                textIndex = (textIndex + 1) % texts.length;
-            }
-            
-            cycleText();
-            setInterval(cycleText, 5000);
+      function cycleText() {
+        typeWriter(texts[textIndex], typeElement, 55);
+        textIndex = (textIndex + 1) % texts.length;
+      }
+
+      cycleText();
+      setInterval(cycleText, 4500);
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
         });
+      });
+    });
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+    // My article form handling
+    document.getElementById('myArticleForm').addEventListener('submit', function(e) {
+      e.preventDefault();
 
-        // My article form handling
-        document.getElementById('myArticleForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const title = document.getElementById('myArticleTitle').value;
-            const source = document.getElementById('myArticleSource').value;
-            const url = document.getElementById('myArticleUrl').value;
-            const summary = document.getElementById('myArticleSummary').value;
-            const analysis = document.getElementById('myPersonalAnalysis').value;
-            
-            // Create new article element
-            const articleElement = document.createElement('div');
-            articleElement.className = 'article-item';
-            articleElement.innerHTML = `
-                <h3>${title}</h3>
-                <div class="article-meta">Published: ${new Date().toLocaleDateString()} | Author: Hanh Le</div>
-                <a href="${url}" target="_blank" class="article-source">${source}</a>
-                <p><strong>Market Signal:</strong> ${summary}</p>
-                <p><strong>My Analysis:</strong> ${analysis}</p>
-            `;
-            
-            // Add to my articles list
-            document.getElementById('myArticlesList').insertBefore(articleElement, document.getElementById('myArticlesList').firstChild);
-            
-            // Reset form
-            this.reset();
-            
-            alert('Insight published successfully!');
-        });
+      const title = document.getElementById('myArticleTitle').value;
+      const source = document.getElementById('myArticleSource').value;
+      const url = document.getElementById('myArticleUrl').value || '#';
+      const summary = document.getElementById('myArticleSummary').value;
+      const analysis = document.getElementById('myPersonalAnalysis').value;
 
-        // Community contribution form handling
-        document.getElementById('contributionForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const title = document.getElementById('contribTitle').value;
-            const source = document.getElementById('contribSource').value;
-            const url = document.getElementById('contribUrl').value;
-            const summary = document.getElementById('contribSummary').value;
-            const question = document.getElementById('contribQuestion').value;
-            
-            alert('Article submitted for analysis! I will review and provide insights soon.');
-            
-            // Reset form
-            this.reset();
-        });
-    </script>
+      const articleElement = document.createElement('div');
+      articleElement.className = 'article-item';
+      articleElement.innerHTML = `
+        <h3>${title}</h3>
+        <div class="article-meta">Published: ${new Date().toLocaleDateString()} | Author: Hanh Le</div>
+        <a href="${url}" target="_blank" rel="noreferrer" class="article-source">${source}</a>
+        <p><strong>Market Signal:</strong> ${summary}</p>
+        <p><strong>My Analysis:</strong> ${analysis}</p>
+      `;
+
+      const list = document.getElementById('myArticlesList');
+      list.insertBefore(articleElement, list.firstChild);
+
+      this.reset();
+      alert('Insight published!');
+    });
+  </script>
 </body>
 </html>
