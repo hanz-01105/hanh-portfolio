@@ -252,6 +252,14 @@
       color:#fff;
       font-size: 13px;
     }
+    .exp-dates{
+      font-family: var(--mono);
+      color: var(--muted);
+      font-size: 11px;
+      display:block;
+      margin-top:2px;
+      font-weight:400;
+    }
     .exp-metrics{
       font-family: var(--mono);
       color: var(--muted);
@@ -310,6 +318,114 @@
       margin-top: 6px;
     }
     .project-links a:hover{
+      border-color: rgba(88,166,255,0.6);
+      background: rgba(13,17,23,0.9);
+    }
+
+    /* Work Samples */
+    .work-list{display:grid;gap:16px}
+    .work-item{
+      border:1px solid var(--border);
+      background: rgba(22,27,34,0.86);
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+    .work-top{
+      display:flex;flex-wrap:wrap;
+      align-items:center;justify-content:space-between;
+      gap:10px;margin-bottom:6px;
+    }
+    .work-role{
+      font-family: var(--mono);
+      color:#fff;
+      font-size: 13px;
+    }
+    .work-tag{
+      font-family: var(--mono);
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(88,166,255,0.45);
+      background: rgba(88,166,255,0.10);
+      color:#cfe6ff;
+    }
+    .work-blocks{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .work-block{
+      border:1px dashed var(--border);
+      background: rgba(13,17,23,0.55);
+      border-radius: 10px;
+      padding: 14px;
+    }
+    .work-block h5{
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 8px;
+      display:flex;align-items:center;gap:6px;
+    }
+    .work-block pre{
+      background: rgba(13,17,23,0.9);
+      border:1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      overflow-x:auto;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text);
+      max-height: 260px;
+    }
+    .work-block pre code{white-space:pre}
+    .work-slide-frame{
+      position:relative;
+      width:100%;
+      padding-top:56.25%; /* 16:9 */
+      border-radius: 8px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background: rgba(13,17,23,0.9);
+      margin-bottom: 10px;
+    }
+    .work-slide-frame iframe{
+      position:absolute;top:0;left:0;width:100%;height:100%;border:0;
+    }
+    .work-pdf-frame{
+      position:relative;
+      width:100%;
+      height: 340px;
+      border-radius: 8px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background: rgba(13,17,23,0.9);
+      margin-bottom: 10px;
+    }
+    .work-pdf-frame iframe{
+      position:absolute;top:0;left:0;width:100%;height:100%;border:0;
+    }
+    .work-slide-placeholder{
+      position:absolute;inset:0;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:8px;color:var(--muted);font-size:12px;font-family:var(--mono);
+      text-align:center;padding:12px;
+    }
+    .work-block-links{display:flex;flex-wrap:wrap;gap:8px}
+    .work-block-links a{
+      display:inline-flex;align-items:center;gap:6px;
+      padding: 7px 10px;
+      border:1px solid var(--border);
+      background: rgba(22,27,34,0.9);
+      color: var(--accent);
+      text-decoration:none;
+      border-radius: 8px;
+      font-size: 12px;
+      font-family: var(--mono);
+      transition:.2s ease;
+    }
+    .work-block-links a:hover{
       border-color: rgba(88,166,255,0.6);
       background: rgba(13,17,23,0.9);
     }
@@ -434,12 +550,13 @@
 
   <header>
     <nav class="container">
-      <div class="logo">$ whoami → Hanh Le • Data & Business Analytics</div>
+      <div class="logo">$ whoami → Kate Le • Data & Business Analytics</div>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">README</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Repos</a></li>
+        <li><a href="#work">Work Samples</a></li>
         <li><a href="#articles">Insights</a></li>
         <li><a href="#resume">Resume</a></li>
       </ul>
@@ -449,22 +566,22 @@
   <section id="home" class="hero">
     <div class="container">
       <div class="hero-content">
-        <h1>HANH LE</h1>
-        <h2>Data & Business Analytics • Turning data into decisions</h2>
+        <h1>KATE LE</h1>
+        <h2>Aspiring Strategist • Turning data into decisions</h2>
 
         <div class="typing-text">
-          <span id="typewriter">Data Scientist Intern @ IDX Exchange | AI Researcher @ Algoverse</span>
+          <span id="typewriter">Finance Intern @ Massachusetts Health Connector</span>
         </div>
 
         <div class="pill-row">
-          <div class="pill"><strong>Focus:</strong> Data + Finance + ML</div>
-          <div class="pill"><strong>Tools:</strong> Python • SQL • Power BI</div>
-          <div class="pill"><strong>Goal:</strong> Data/Financial Analyst Internships</div>
+          <div class="pill"><strong>Focus:</strong> Finance + Data + Strategy</div>
+          <div class="pill"><strong>Tools:</strong> Excel • SQL • Python</div>
+          <div class="pill"><strong>Studying:</strong> Mathematics @ Boston University</div>
         </div>
 
         <div class="social-links">
           <a href="#" onclick="showEmail(); return false;"><i class="fas fa-envelope"></i>Email</a>
-          <a href="https://linkedin.com/in/hanhle01" target="_blank" rel="noreferrer"><i class="fab fa-linkedin"></i>LinkedIn</a>
+          <a href="https://linkedin.com/in/katele01" target="_blank" rel="noreferrer"><i class="fab fa-linkedin"></i>LinkedIn</a>
           <a href="https://github.com/hanz-01105" target="_blank" rel="noreferrer"><i class="fab fa-github"></i>GitHub</a>
           <a href="https://lighthearted-kataifi-13b5ad.netlify.app/" target="_blank" rel="noreferrer"><i class="fas fa-globe"></i>Portfolio</a>
         </div>
@@ -485,11 +602,13 @@
         <div class="about-content">
           <div class="about-text">
             <p><strong>Quick summary</strong></p>
-            <p>Currently working across analytics + modeling projects with measurable impact (process speedups, KPI visibility, and model performance improvements).</p>
+            <p>Incoming junior at Boston University pursuing a B.S. in Mathematics (GPA 3.7, Dean's List). Across internships in data science, financial analysis, and product management, I've built predictive models, dashboards, and forecasts using Python, SQL, Tableau, and Power BI — from real-estate valuation with XGBoost/LSTM to stock and portfolio risk analysis.</p>
             <p><strong>What I care about</strong></p>
-            <p>Turning messy data into simple signals, and turning signals into decisions people can act on.</p>
-            <p><strong>Currently learning</strong></p>
-            <p>Advanced SQL, stronger modeling discipline, and CFA Level 1 foundations.</p>
+            <p>Turning messy data into simple signals, and turning signals into decisions people can act on — then communicating those insights clearly to the people who need them.</p>
+            <p><strong>Education</strong></p>
+            <p>B.S. Mathematics & Statistics, Boston University (Jan 2026 – May 2028). Previously B.B.A. Business Statistics, UMass Boston Honors College (Aug 2023 – Dec 2025).</p>
+            <p><strong>Certifications</strong></p>
+            <p>Accounting Foundations, Mastering Key Financial Ratios, Storytelling to Influence Leadership, Excel VLOOKUP/XLOOKUP, Introduction to AI.</p>
           </div>
 
           <div class="skills-grid">
@@ -531,6 +650,16 @@
                 <span class="skill-tag">Git</span>
               </div>
             </div>
+
+            <div class="skill-category">
+              <h4>with open("finance.txt"):</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">Full Cycle Accounting</span>
+                <span class="skill-tag">Accruals</span>
+                <span class="skill-tag">QuickBooks</span>
+                <span class="skill-tag">NetSuite / Odoo</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -545,53 +674,95 @@
         <div class="exp-list">
           <div class="exp-item">
             <div class="exp-top">
-              <div class="exp-role">Data Analyst Intern • Nunchi Health</div>
-              <div class="exp-metrics">25% faster reimbursements • 30% transparency • 40% engagement</div>
+              <div class="exp-role">Finance Intern • Massachusetts Health Connector<span class="exp-dates">May 2026 – Present</span></div>
             </div>
-            <div class="exp-desc">Improved reimbursement workflows and reporting to support leadership visibility and faster decisions.</div>
+            <div class="exp-desc">Currently supporting finance operations at Massachusetts' health insurance marketplace. More details to come as the internship progresses.</div>
             <div class="exp-badges">
-              <span class="badge ok">Dashboards</span>
-              <span class="badge">Reporting</span>
-              <span class="badge">Ops analytics</span>
+              <span class="badge ok">Current</span>
+              <span class="badge">Finance</span>
             </div>
           </div>
 
           <div class="exp-item">
             <div class="exp-top">
-              <div class="exp-role">Data Scientist Intern • IDX Exchange</div>
-              <div class="exp-metrics">R² 0.86 • 60% automation • 20% faster investment decisions</div>
+              <div class="exp-role">Data Entry Assistant • Boston University<span class="exp-dates">Jan 2026 – Present</span></div>
             </div>
-            <div class="exp-desc">Built forecasting + feature engineering workflows to improve model performance and reduce manual work.</div>
+            <div class="exp-desc">Help 1,000+ scholars get set up in ORCID and connected to their BU content, and work with BU Profiles — a system used by Harvard, UCSF, and Penn State to connect internal and external parties with BU researchers. Validate and curate data, build and organize profiles across both systems, and assist with audit/usage reporting.</div>
             <div class="exp-badges">
-              <span class="badge blue">Python</span>
-              <span class="badge blue">ML</span>
-              <span class="badge">Feature engineering</span>
-            </div>
-          </div>
-
-          <div class="exp-item">
-            <div class="exp-top">
-              <div class="exp-role">AI Research Assistant • Stanford University (Dr. Benjamin Liu)</div>
-              <div class="exp-metrics">90% diagnostic accuracy • 35% error reduction • 40% faster pipelines</div>
-            </div>
-            <div class="exp-desc">Worked on CNN pipelines and performance improvements for diagnostic tasks and model reliability.</div>
-            <div class="exp-badges">
-              <span class="badge blue">TensorFlow</span>
-              <span class="badge">Pipelines</span>
-              <span class="badge">Evaluation</span>
-            </div>
-          </div>
-
-          <div class="exp-item">
-            <div class="exp-top">
-              <div class="exp-role">Financial Analyst Intern • Congero Technology Group</div>
-              <div class="exp-metrics">25% faster close • 18% forecast precision • 30% KPI visibility</div>
-            </div>
-            <div class="exp-desc">Supported forecasting and reporting improvements to increase clarity across finance operations.</div>
-            <div class="exp-badges">
-              <span class="badge">Financial modeling</span>
-              <span class="badge ok">KPI tracking</span>
+              <span class="badge ok">Current</span>
+              <span class="badge">Data curation</span>
               <span class="badge">Process improvement</span>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-top">
+              <div class="exp-role">Financial Analyst Intern • Nunchi Health<span class="exp-dates">Nov 2025 – Jan 2026</span></div>
+            </div>
+            <div class="exp-desc">Conducted financial analysis and light due diligence on reimbursement requests and vendor payments, improved reimbursement speed while maintaining policy-aligned compliance, and ran ongoing reconciliations and nonprofit-standard bookkeeping in QuickBooks. Prepared quarterly financial reports and variance analysis for the Board using Looker Studio.</div>
+            <div class="exp-badges">
+              <span class="badge ok">25% faster reimbursements</span>
+              <span class="badge">30% fewer discrepancies</span>
+              <span class="badge">40% more Board adoption</span>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-top">
+              <div class="exp-role">Data Scientist Intern • IDX Exchange<span class="exp-dates">Sep 2025 – Dec 2025</span></div>
+            </div>
+            <div class="exp-desc">Automated financial data pipelines in Python, cutting manual reporting time and improving reporting efficiency for investment performance metrics across $435M+ in real estate portfolios. Built XGBoost/LSTM forecasting models to predict property valuations (target R² &gt; 0.80, MAPE &lt; 20%), and analyzed 40+ financial datasets to reduce portfolio risk exposure and optimize capital allocation.</div>
+            <div class="exp-badges">
+              <span class="badge blue">60% less manual reporting</span>
+              <span class="badge blue">XGBoost / LSTM</span>
+              <span class="badge">12% lower risk exposure</span>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-top">
+              <div class="exp-role">Project Management Intern • Kigumi Group<span class="exp-dates">Jul 2025 – Sep 2025</span></div>
+            </div>
+            <div class="exp-desc">Conducted market research across 150+ schools and 3,000+ students to sharpen an AI-ethics strategy, developed 10+ learning modules for adolescent learners, and designed an app wireframe for a parental digital-guidance product.</div>
+            <div class="exp-badges">
+              <span class="badge">40% more content relevance</span>
+              <span class="badge">70%+ completion rate</span>
+              <span class="badge ok">25% more engagement</span>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-top">
+              <div class="exp-role">AI Researcher Fellow • Algoverse<span class="exp-dates">Jun 2025 – Sep 2025</span></div>
+            </div>
+            <div class="exp-desc">Engineered CNN models reaching 90% diagnostic accuracy across 214 clinical scenarios, with a paper accepted to NeurIPS 2025's GenAI4Health and Multi-Turn LLM workshops. Reduced model bias through demographic analysis and Chi-square testing across 8 categories.</div>
+            <div class="exp-badges">
+              <span class="badge blue">90% diagnostic accuracy</span>
+              <span class="badge blue">TensorFlow / CNNs</span>
+              <span class="badge">35% less bias</span>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-top">
+              <div class="exp-role">Financial Analyst Intern • Congero Technology Group<span class="exp-dates">Jun 2025 – Jul 2025</span></div>
+            </div>
+            <div class="exp-desc">Built dynamic Excel dashboards with automated KPI reporting for leadership, improved forecast accuracy through SQL-based variance analysis, and streamlined billing workflows via Oracle NetSuite and Odoo ERP automation — cutting processing time from 5 days to 2 hours.</div>
+            <div class="exp-badges">
+              <span class="badge">30% more KPI visibility</span>
+              <span class="badge ok">18% forecast accuracy</span>
+              <span class="badge">$30K+ saved annually</span>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-top">
+              <div class="exp-role">Peer Tutor & Food Service Specialist • UMass Boston Honors College<span class="exp-dates">Sep 2024 – Dec 2025</span></div>
+            </div>
+            <div class="exp-desc">Delivered 100+ hours of one-on-one and group tutoring in Math, Economics, and Finance, while managing inventory and distributing food & hygiene items to 100+ students weekly as a Food Service Specialist.</div>
+            <div class="exp-badges">
+              <span class="badge">100+ tutoring hours</span>
+              <span class="badge">Community support</span>
             </div>
           </div>
         </div>
@@ -631,6 +802,113 @@
               <a href="https://github.com/hanz-01105/Bank-loan-analysis" target="_blank" rel="noreferrer"><i class="fab fa-github"></i>View Code</a>
             </div>
           </div>
+
+          <div class="project-card">
+            <h3>$ ./idx_exchange_data_science</h3>
+            <p>Forecasting pipeline built during the IDX Exchange internship — XGBoost/LSTM models predicting property valuations across real estate portfolios.</p>
+            <p><strong>Stack:</strong> Python • XGBoost • LSTM • Pandas</p>
+            <div class="project-links">
+              <a href="https://github.com/hanz-01105/IDX-Exchange-Data_Science-Project" target="_blank" rel="noreferrer"><i class="fab fa-github"></i>View Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Samples -->
+    <section id="work">
+      <div class="container">
+        <div class="section-title">Work Samples</div>
+        <div class="section-subtitle">
+          Code, decks, and reports from internships. New cards appear here as more work gets added —
+          see the <code>&lt;!-- HOW TO ADD --&gt;</code> comment at the bottom of this section in the
+          page source for how to add another.
+        </div>
+
+        <div class="work-list">
+
+          <!-- ============ NUNCHI HEALTH ============ -->
+          <div class="work-item">
+            <div class="work-top">
+              <div class="work-role">Financial Analyst Intern • Nunchi Health</div>
+              <span class="work-tag">QuickBooks • Looker Studio</span>
+            </div>
+
+            <div class="work-blocks">
+              <!-- PDF REPORT: embedded from /asset/nunchi-health-report.pdf -->
+              <div class="work-block">
+                <h5><i class="fas fa-file-pdf"></i> Report (PDF)</h5>
+                <div class="work-pdf-frame">
+                  <iframe src="asset/nunchi-health-report.pdf"></iframe>
+                </div>
+                <div class="work-block-links">
+                  <a href="asset/nunchi-health-report.pdf" target="_blank" rel="noreferrer"><i class="fas fa-download"></i>Download report</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============ IDX EXCHANGE ============ -->
+          <div class="work-item">
+            <div class="work-top">
+              <div class="work-role">Data Scientist Intern • IDX Exchange</div>
+              <span class="work-tag">Python • ML • Forecasting</span>
+            </div>
+
+            <div class="work-blocks">
+              <div class="work-block">
+                <h5><i class="fas fa-code"></i> Code</h5>
+                <p style="color:var(--muted); font-size:13px; margin-bottom:6px;">Forecasting pipeline and full project repo:</p>
+                <div class="work-block-links">
+                  <a href="https://github.com/hanz-01105/IDX-Exchange-Data_Science-Project" target="_blank" rel="noreferrer"><i class="fab fa-github"></i>Full repo</a>
+                </div>
+              </div>
+
+              <div class="work-block">
+                <h5><i class="fas fa-file-powerpoint"></i> Presentation</h5>
+                <div class="work-slide-frame">
+                  <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fhanz-01105.github.io%2Fhanh-portfolio%2Fasset%2FIDX%2520Exchange-%2520DS%252035.pptx" allowfullscreen></iframe>
+                </div>
+                <div class="work-block-links">
+                  <a href="asset/IDX%20Exchange-%20DS%2035.pptx" target="_blank" rel="noreferrer"><i class="fas fa-download"></i>Download .pptx</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============ ALGOVERSE (AI RESEARCH) ============ -->
+          <div class="work-item">
+            <div class="work-top">
+              <div class="work-role">AI Researcher Fellow • Algoverse</div>
+              <span class="work-tag">TensorFlow • CNN pipelines • NeurIPS 2025</span>
+            </div>
+
+            <div class="work-blocks">
+              <div class="work-block">
+                <h5><i class="fas fa-file-pdf"></i> NeurIPS 2025 poster (PDF)</h5>
+                <div class="work-pdf-frame">
+                  <iframe src="asset/Kate%20Le%20Copy%20of%20NeurIPS%20Poster.pdf"></iframe>
+                </div>
+                <div class="work-block-links">
+                  <a href="asset/Kate%20Le%20Copy%20of%20NeurIPS%20Poster.pdf" target="_blank" rel="noreferrer"><i class="fas fa-download"></i>Download poster</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============ ADD A NEW INTERNSHIP CARD ============
+               HOW TO ADD:
+               1) Copy one .work-item block above, from its opening tag to its matching close.
+               2) Update .work-role and .work-tag text.
+               3) Inside .work-blocks, add a .work-block for each file:
+                  - Code: a GitHub link (see IDX Exchange block above).
+                  - Slides (.pptx): drop the file in /asset/, then set the .work-slide-frame
+                    iframe src to the Office viewer URL, encoding your file's live GitHub
+                    Pages URL (see IDX Exchange block above for the exact pattern).
+                  - Report/poster (.pdf): drop the file in /asset/, then set the
+                    .work-pdf-frame iframe src to "asset/your-file-name.pdf" directly —
+                    no Office viewer needed for PDFs (see Nunchi Health block above). -->
+
         </div>
       </div>
     </section>
@@ -645,7 +923,7 @@
           <div class="articles-list" id="myArticlesList">
             <div class="article-item">
               <h3>NVIDIA's China Strategy: Geopolitical Risk vs Market Opportunity</h3>
-              <div class="article-meta">Published: August 17, 2025 | Author: Hanh Le</div>
+              <div class="article-meta">Published: August 17, 2025 | Author: Kate Le</div>
               <a href="https://www.wsj.com/tech/nvidia-wins-ok-to-resume-sales-of-ai-chip-to-china-after-ceo-meets-trump-68f55d71?mod=series_uschina"
                  target="_blank" rel="noreferrer" class="article-source">Wall Street Journal</a>
               <p><strong>Market Signal:</strong> NVIDIA receives approval to resume H20 AI chip sales to China after leadership engagement.</p>
@@ -654,7 +932,7 @@
 
             <div class="article-item">
               <h3>Retail Tariff Impact: Swedish Brand Exits US Market</h3>
-              <div class="article-meta">Published: August 15, 2025 | Author: Hanh Le</div>
+              <div class="article-meta">Published: August 15, 2025 | Author: Kate Le</div>
               <a href="https://www.wsj.com/business/retail/polarn-o-pyret-swedish-clothing-us-tariffs-55e7a2cd?mod=business_feat2_retail_pos5"
                  target="_blank" rel="noreferrer" class="article-source">Wall Street Journal</a>
               <p><strong>Market Signal:</strong> Polarn O. Pyret exits US market due to tariff-driven cost pressure.</p>
@@ -722,7 +1000,7 @@
                 <i class="fab fa-github"></i> View GitHub
               </a>
 
-              <a href="https://linkedin.com/in/hanhle01" class="resume-download" target="_blank" rel="noreferrer">
+              <a href="https://linkedin.com/in/katele01" class="resume-download" target="_blank" rel="noreferrer">
                 <i class="fab fa-linkedin"></i> View LinkedIn
               </a>
             </div>
@@ -734,7 +1012,7 @@
 
   <footer>
     <div class="container">
-      <div>© 2025 Hanh Le</div>
+      <div>© 2025 Kate Le</div>
       <div>“Turning data into decisions, insights into impact”</div>
     </div>
   </footer>
@@ -765,9 +1043,10 @@
     document.addEventListener('DOMContentLoaded', function() {
       const typeElement = document.getElementById('typewriter');
       const texts = [
+        'Finance Intern @ Massachusetts Health Connector',
+        'Data Entry Assistant @ Boston University',
         'Data Scientist Intern @ IDX Exchange',
-        'Financial Analyst Intern @ Congero Technology Group',
-        'AI Research @ Algoverse / Stanford',
+        'AI Researcher Fellow @ Algoverse',
         'Junior @ Boston University'
       ];
       let textIndex = 0;
@@ -805,7 +1084,7 @@
       articleElement.className = 'article-item';
       articleElement.innerHTML = `
         <h3>${title}</h3>
-        <div class="article-meta">Published: ${new Date().toLocaleDateString()} | Author: Hanh Le</div>
+        <div class="article-meta">Published: ${new Date().toLocaleDateString()} | Author: Kate Le</div>
         <a href="${url}" target="_blank" rel="noreferrer" class="article-source">${source}</a>
         <p><strong>Market Signal:</strong> ${summary}</p>
         <p><strong>My Analysis:</strong> ${analysis}</p>
